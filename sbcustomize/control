@@ -1,0 +1,9 @@
+Package: sangster
+Name: SBCustomize
+Version: 0.0.3
+Architecture: iphoneos-arm
+Description: An awesome MobileSubstrate tweak!
+Maintainer: Jack Sangster
+Author: Jack Sangster
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000)
