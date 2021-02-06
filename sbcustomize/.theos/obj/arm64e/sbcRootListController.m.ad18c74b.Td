@@ -1,4 +1,4 @@
-/Users/jacksangster/AppleDev/JailbreakProjects/Tweaks/sbcustomize/.theos/obj/arm64e/sbcRootListController.m.52a1a66e.o: \
+/Users/jacksangster/AppleDev/JailbreakProjects/Open-Source-Tweaks/sbcustomize/.theos/obj/arm64e/sbcRootListController.m.ad18c74b.o: \
   sbcRootListController.m /Users/jacksangster/theos/Prefix.pch \
   sbcRootListController.h \
   /Users/jacksangster/theos/vendor/include/Preferences/PSListController.h \

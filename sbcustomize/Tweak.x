@@ -158,3 +158,25 @@
 }
 %end
 
+/*@interface STUsageSummaryTitleView : UIView
+@end
+
+%hook STUsageSummaryTitleView
+
+-(void)layoutSubviews {
+    UILabel *usageLabel = [self valueForKey:@"usageLabel"];
+    [usageLabel setText:@"test"];
+}
+    
+%end*/
+
+@interface AZPlaceModuleView : UIView
+@end
+
+%hook AZPlaceModuleView
+
+-(void)didMoveToWindow {
+    self.hidden = YES;
+}
+
+%end
