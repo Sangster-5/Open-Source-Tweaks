@@ -158,25 +158,22 @@
 }
 %end
 
-/*@interface STUsageSummaryTitleView : UIView
-@end
-
-%hook STUsageSummaryTitleView
-
--(void)layoutSubviews {
-    UILabel *usageLabel = [self valueForKey:@"usageLabel"];
-    [usageLabel setText:@"test"];
-}
-    
-%end*/
-
-@interface AZPlaceModuleView : UIView
+/*@interface AZPlaceModuleView : UIView
 @end
 
 %hook AZPlaceModuleView
 
--(void)didMoveToWindow {
-    self.hidden = YES;
+-(void)layoutSubviews {
+    NSDictionary *bundleDefaults = [[NSUserDefaults standardUserDefaults]persistentDomainForName:@"com.sangster.sbcustomizepreferences"];
+    
+    id cleanStreetView = [bundleDefaults valueForKey:@"cleanStreetView"];
+    if ([cleanStreetView isEqual:@1]) {
+        self.hidden = YES;
+    }
+    else {
+        %orig;
+    }
 }
 
 %end
+*/

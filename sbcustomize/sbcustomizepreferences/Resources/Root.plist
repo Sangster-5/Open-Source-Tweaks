@@ -82,6 +82,18 @@
 			<key>label</key>
 			<string>Spoof Storage</string>
 		</dict>
+		<!--<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+            <false/>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomizepreferences</string>
+			<key>key</key>
+			<string>cleanStreetView</string>
+			<key>label</key>
+			<string>Clean Street View</string>
+		</dict>-->
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
