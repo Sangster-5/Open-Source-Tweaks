@@ -14,7 +14,7 @@
 			<key>cell</key>
 			<string>PSSwitchCell</string>
 			<key>default</key>
-            <true/>
+            <false/>
 			<key>defaults</key>
 			<string>com.sangster.sbcustomizepreferences</string>
 			<key>key</key>
