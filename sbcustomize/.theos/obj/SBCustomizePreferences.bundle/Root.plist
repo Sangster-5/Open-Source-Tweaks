@@ -82,7 +82,7 @@
 			<key>label</key>
 			<string>Spoof Storage</string>
 		</dict>
-		<!--<dict>
+		<dict>
 			<key>cell</key>
 			<string>PSSwitchCell</string>
 			<key>default</key>
@@ -90,10 +90,34 @@
 			<key>defaults</key>
 			<string>com.sangster.sbcustomizepreferences</string>
 			<key>key</key>
-			<string>cleanStreetView</string>
+			<string>hideBadges</string>
 			<key>label</key>
-			<string>Clean Street View</string>
-		</dict>-->
+			<string>Hide Icon Badges (Respring)</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+            <false/>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomizepreferences</string>
+			<key>key</key>
+			<string>hideBetaDots</string>
+			<key>label</key>
+			<string>Hide Beta Dots (Respring)</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+            <false/>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomizepreferences</string>
+			<key>key</key>
+			<string>hideUpdateDots</string>
+			<key>label</key>
+			<string>Hide Update Dots (Respring)</string>
+		</dict>
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>

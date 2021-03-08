@@ -158,22 +158,71 @@
 }
 %end
 
-/*@interface AZPlaceModuleView : UIView
+// Removes App Badges
+
+@interface SBIconBadgeView : UIView
 @end
 
-%hook AZPlaceModuleView
+%hook SBIconBadgeView
 
 -(void)layoutSubviews {
     NSDictionary *bundleDefaults = [[NSUserDefaults standardUserDefaults]persistentDomainForName:@"com.sangster.sbcustomizepreferences"];
     
-    id cleanStreetView = [bundleDefaults valueForKey:@"cleanStreetView"];
-    if ([cleanStreetView isEqual:@1]) {
-        self.hidden = YES;
+    id hideBadges = [bundleDefaults valueForKey:@"hideBadges"];
+    
+    if ([hideBadges isEqual:@1]) {
+        [self setHidden:YES];
     }
-    else {
+    
+    else if ([hideBadges isEqual:@0]) {
         %orig;
     }
 }
 
 %end
-*/
+
+// Hides Beta Dots
+
+@interface SBIconBetaLabelAccessoryView : UIView
+@end
+
+%hook SBIconBetaLabelAccessoryView
+
+-(void)layoutSubviews {
+    NSDictionary *bundleDefaults = [[NSUserDefaults standardUserDefaults]persistentDomainForName:@"com.sangster.sbcustomizepreferences"];
+    
+    id hideBetaDots = [bundleDefaults valueForKey:@"hideBetaDots"];
+    
+    if ([hideBetaDots isEqual:@1]) {
+        [self setHidden:YES];
+    }
+    
+    else if ([hideBetaDots isEqual:@0]) {
+        %orig;
+    }
+}
+
+%end
+
+// Hides Update Dots
+
+@interface SBIconRecentlyUpdatedLabelAccessoryView : UIView
+@end
+
+%hook SBIconRecentlyUpdatedLabelAccessoryView
+
+-(void)layoutSubviews {
+    NSDictionary *bundleDefaults = [[NSUserDefaults standardUserDefaults]persistentDomainForName:@"com.sangster.sbcustomizepreferences"];
+    
+    id hideUpdateDots = [bundleDefaults valueForKey:@"hideUpdateDots"];
+    
+    if ([hideUpdateDots isEqual:@1]) {
+        [self setHidden:YES];
+    }
+    
+    else if ([hideUpdateDots isEqual:@0]) {
+        %orig;
+    }
+}
+
+%end
