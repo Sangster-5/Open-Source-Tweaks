@@ -1,6 +1,6 @@
 Package: sangster
 Name: SBCustomize
-Version: 0.0.6
+Version: 0.0.8
 Architecture: iphoneos-arm
 Description: Tweak that allows you to customize iOS in many ways for free.
 Maintainer: Sangster5

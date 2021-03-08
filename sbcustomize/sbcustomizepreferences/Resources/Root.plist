@@ -38,7 +38,7 @@
 			<key>key</key>
 			<string>hideDockBG</string>
 			<key>label</key>
-			<string>Hide Dock Background(Respring)</string>
+			<string>Hide Dock Background (Respring)</string>
 		</dict>
 		<dict>
 			<key>cell</key>
