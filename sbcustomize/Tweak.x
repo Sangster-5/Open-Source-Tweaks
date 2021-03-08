@@ -267,7 +267,17 @@
     }
     
     else if([hideDock isEqual:@0]) {
+        %orig;
+    }
+    
+    id hideDockBG = [bundleDefaults valueForKey:@"hideDockBG"];
+    
+    if([hideDockBG isEqual:@1]) {
         [self setHidden:NO];
+    }
+    
+    else if([hideDockBG isEqual:@0]) {
+        %orig;
     }
 }
 

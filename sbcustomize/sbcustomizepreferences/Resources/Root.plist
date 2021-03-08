@@ -36,9 +36,21 @@
 			<key>defaults</key>
 			<string>com.sangster.sbcustomizepreferences</string>
 			<key>key</key>
+			<string>hideDockBG</string>
+			<key>label</key>
+			<string>Hide Dock Background(Respring)</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+            <false/>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomizepreferences</string>
+			<key>key</key>
 			<string>hideDock</string>
 			<key>label</key>
-			<string>Hide Dock</string>
+			<string>Hide Dock (Respring)</string>
 		</dict>
 		<dict>
 			<key>cell</key>
