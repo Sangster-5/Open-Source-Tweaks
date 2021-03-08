@@ -249,3 +249,26 @@
 }
 
 %end
+
+// Hide Dock
+
+@interface SBDockView : UIView
+@end
+
+%hook SBDockView
+
+-(void)layoutSubviews {
+    NSDictionary *bundleDefaults = [[NSUserDefaults standardUserDefaults]persistentDomainForName:@"com.sangster.sbcustomizepreferences"];
+    
+    id hideDock = [bundleDefaults valueForKey:@"hideDock"];
+    
+    if([hideDock isEqual:@1]) {
+        [self setHidden:YES];
+    }
+    
+    else if([hideDock isEqual:@0]) {
+        [self setHidden:NO];
+    }
+}
+
+%end
