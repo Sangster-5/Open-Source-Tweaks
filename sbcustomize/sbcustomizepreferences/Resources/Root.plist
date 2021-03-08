@@ -28,7 +28,7 @@
 			<key>label</key>
 			<string>Hide Page Dots (Respring)</string>
 		</dict>
-		<dict>
+		<!--<dict>
 			<key>cell</key>
 			<string>PSSwitchCell</string>
 			<key>default</key>
@@ -39,7 +39,7 @@
 			<string>hideDockBG</string>
 			<key>label</key>
 			<string>Hide Dock Background (Respring)</string>
-		</dict>
+		</dict>-->
 		<dict>
 			<key>cell</key>
 			<string>PSSwitchCell</string>

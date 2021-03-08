@@ -270,7 +270,7 @@
         %orig;
     }
     
-    id hideDockBG = [bundleDefaults valueForKey:@"hideDockBG"];
+    /*id hideDockBG = [bundleDefaults valueForKey:@"hideDockBG"];
     
     if([hideDockBG isEqual:@0]) {
         %orig;
@@ -278,7 +278,7 @@
     
     else if([hideDockBG isEqual:@1]) {
         [self setHidden:NO];
-    }
+    }*/
 }
 
 %end
