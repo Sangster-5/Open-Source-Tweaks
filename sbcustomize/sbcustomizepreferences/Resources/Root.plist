@@ -11,7 +11,6 @@
 			<string>SBCustomize Preferences</string>
 		</dict>
 		<dict>
-		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>label</key>
@@ -28,6 +27,7 @@
 			<string>hidePageDots</string>
 			<key>label</key>
 			<string>Hide Page Dots (Respring)</string>
+		</dict>
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
@@ -64,7 +64,7 @@
 			<key>label</key>
 			<string>General</string>
 		</dict>
-		</dict>
+		<dict>
 			<key>cell</key>
 			<string>PSSwitchCell</string>
 			<key>default</key>
