@@ -2,8 +2,6 @@ export PREFIX=$(THEOS)/toolchain/Xcode.xctoolchain/usr/bin/
 
 export ARCHS = arm64 arm64e
 
-THEOS_DEVICE_IP=192.168.2.18
-
 INSTALL_TARGET_PROCESSES = SpringBoard
 
 FINALPACKAGE = 1

@@ -1,10 +1,10 @@
 Package: sangster
 Name: SBCustomize
 Architecture: iphoneos-arm
-Description: An awesome MobileSubstrate tweak!
-Maintainer: Jack Sangster
-Author: Jack Sangster
+Description: Tweak that allows you to customize iOS in many ways for free.
+Maintainer: Sangster5
+Author: Sangster5
 Section: Tweaks
 Depends: mobilesubstrate (>= 0.9.5000)
-Version: 0.0.3
+Version: 0.0.4
 Installed-Size: 316
