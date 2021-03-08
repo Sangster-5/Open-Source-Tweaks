@@ -128,7 +128,7 @@
 			<key>key</key>
 			<string>hideApps</string>
 			<key>label</key>
-			<string>Make Apps Invisible</string>
+			<string>Make Apps Invisible (Respring)</string>
 		</dict>
 		<dict>
 			<key>cell</key>

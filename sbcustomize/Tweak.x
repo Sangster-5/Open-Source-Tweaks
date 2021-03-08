@@ -122,11 +122,11 @@
     id hidePageDots = [bundleDefaults valueForKey:@"hidePageDots"];
     
     if ([hidePageDots isEqual:@1]) {
-        self.hidden = YES;
+        [self setHidden:YES];
     }
     
     else if ([hidePageDots isEqual:@0]) {
-        %orig;
+        [self setHidden:NO];
     }
     
 }
@@ -175,7 +175,7 @@
     }
     
     else if ([hideBadges isEqual:@0]) {
-        %orig;
+        [self setHidden:NO];
     }
 }
 
@@ -198,7 +198,7 @@
     }
     
     else if ([hideBetaDots isEqual:@0]) {
-        %orig;
+        [self setHidden:NO];
     }
 }
 
@@ -221,7 +221,7 @@
     }
     
     else if ([hideUpdateDots isEqual:@0]) {
-        %orig;
+        [self setHidden:NO];
     }
 }
 
@@ -245,7 +245,6 @@
     
     else if ([hideApps isEqual:@0]) {
         [self setHidden:NO];
-        %orig;
     }
 }
 
