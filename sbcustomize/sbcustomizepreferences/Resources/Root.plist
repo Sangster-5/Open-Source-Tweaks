@@ -11,16 +11,11 @@
 			<string>SBCustomize Preferences</string>
 		</dict>
 		<dict>
+		<dict>
 			<key>cell</key>
-			<string>PSSwitchCell</string>
-			<key>default</key>
-            <false/>
-			<key>defaults</key>
-			<string>com.sangster.sbcustomizepreferences</string>
-			<key>key</key>
-			<string>removeLabels</string>
+			<string>PSGroupCell</string>
 			<key>label</key>
-			<string>Hide Icon Labels (Respring)</string>
+			<string>Home Screen</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -30,9 +25,14 @@
 			<key>defaults</key>
 			<string>com.sangster.sbcustomizepreferences</string>
 			<key>key</key>
-			<string>removeStatusBar</string>
+			<string>hidePageDots</string>
 			<key>label</key>
-			<string>Hide Statusbar</string>
+			<string>Hide Page Dots (Respring)</string>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Lock Screen</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -60,15 +60,21 @@
 		</dict>
 		<dict>
 			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>General</string>
+		</dict>
+		</dict>
+			<key>cell</key>
 			<string>PSSwitchCell</string>
 			<key>default</key>
             <false/>
 			<key>defaults</key>
 			<string>com.sangster.sbcustomizepreferences</string>
 			<key>key</key>
-			<string>hidePageDots</string>
+			<string>removeStatusBar</string>
 			<key>label</key>
-			<string>Hide Page Dots (Respring)</string>
+			<string>Hide Statusbar</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -81,6 +87,24 @@
 			<string>spoofStorage</string>
 			<key>label</key>
 			<string>Spoof Storage</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Icons</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+            <false/>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomizepreferences</string>
+			<key>key</key>
+			<string>removeLabels</string>
+			<key>label</key>
+			<string>Hide Icon Labels (Respring)</string>
 		</dict>
 		<dict>
 			<key>cell</key>
