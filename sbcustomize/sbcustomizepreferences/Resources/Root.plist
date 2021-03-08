@@ -120,6 +120,30 @@
 		</dict>
 		<dict>
 			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+            <false/>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomizepreferences</string>
+			<key>key</key>
+			<string>hideApps</string>
+			<key>label</key>
+			<string>Make Apps Invisible (Respring)</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+            <false/>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomizepreferences</string>
+			<key>key</key>
+			<string>hideWidgets</string>
+			<key>label</key>
+			<string>Make Widgets Invisible (Respring)</string>
+		</dict>
+		<dict>
+			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>label</key>
 			<string>Custom Statusbar</string>

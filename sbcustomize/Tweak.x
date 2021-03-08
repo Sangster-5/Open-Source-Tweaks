@@ -40,7 +40,7 @@
 
 %end
 
-//CHanges Statusbar text
+//Changes Statusbar text
 @interface _UIStatusBarStringView : UILabel
 @end
 
@@ -221,6 +221,30 @@
     }
     
     else if ([hideUpdateDots isEqual:@0]) {
+        %orig;
+    }
+}
+
+%end
+
+// Hide Apps they are just invisible
+
+@interface SBIconImageView : UIView
+@end
+
+%hook SBIconImageView
+
+-(void)layoutSubviews {
+    NSDictionary *bundleDefaults = [[NSUserDefaults standardUserDefaults]persistentDomainForName:@"com.sangster.sbcustomizepreferences"];
+    
+    id hideApps = [bundleDefaults valueForKey:@"hideApps"];
+    
+    if([hideApps isEqual:@1]) {
+        [self setHidden:YES];
+    }
+    
+    else if ([hideApps isEqual:@0]) {
+        [self setHidden:NO];
         %orig;
     }
 }
