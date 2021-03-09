@@ -1,4 +1,5 @@
 #import <UIKit/UIKit.h>
+#import "SparkColourPickerUtils.h"
 
 
 //Hides Icon Labels
@@ -310,6 +311,62 @@
     else if([hideDockBG isEqual:@1]) {
         [self setHidden:NO];
     }*/
+}
+
+%end
+
+
+// Change Label Text Colour
+
+/*%hook UILabel
+
+-(void)layoutSubviews {
+    self.textColor = [UIColor blueColor];
+}
+
+%end
+
+@interface UITableViewLabel : UILabel
+@end
+
+%hook UITableViewLabel
+
+-(void)layoutSubviews {
+    self.textColor = [UIColor blueColor];
+}
+
+%end
+
+@interface UITabBarButtonLabel : UILabel
+@end
+
+%hook UITabBarButtonLabel
+
+-(void)layoutSubviews {
+    self.textColor = [UIColor blueColor];
+}
+
+%end*/
+
+// Remove Cloud Icon
+
+@interface SBIconCloudLabelAccessoryView : UIView
+@end
+
+%hook SBIconCloudLabelAccessoryView
+
+-(void)layoutSubviews {
+    NSDictionary *bundleDefaults = [[NSUserDefaults standardUserDefaults]persistentDomainForName:@"com.sangster.sbcustomizepreferences"];
+    
+    id hideCloudIcon = [bundleDefaults valueForKey:@"hideCloudIcon"];
+    
+    if([hideCloudIcon isEqual:@1]) {
+        [self setHidden:YES];
+    }
+    
+    else if([hideCloudIcon isEqual:@0]) {
+        %orig;
+    }
 }
 
 %end

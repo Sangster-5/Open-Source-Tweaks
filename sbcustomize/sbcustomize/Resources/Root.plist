@@ -180,6 +180,18 @@
 			<key>defaults</key>
 			<string>com.sangster.sbcustomizepreferences</string>
 			<key>key</key>
+			<string>hideCloudIcon</string>
+			<key>label</key>
+			<string>Hide Cloud Icon (Respring)</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+            <false/>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomizepreferences</string>
+			<key>key</key>
 			<string>hideApps</string>
 			<key>label</key>
 			<string>Make Apps Invisible (Respring)</string>
@@ -234,6 +246,31 @@
 			<key>defaults</key>
 			<string>com.sangster.sbcustomizepreferences</string>
         </dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Text</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSLinkCell</string>
+			<key>cellClass</key>
+			<string>SparkColourPickerCell</string>
+			<key>libsparkcolourpicker</key>
+			<dict>
+				<key>defaults</key>
+				<string>com.your.identifier</string>
+				<key>fallback</key>
+				<string>#ffffff</string>
+				<key>alpha</key>
+				<true/>
+			</dict>
+			<key>label</key>
+			<string>Your Colour</string>
+			<key>key</key>
+			<string>textColour</string>
+		</dict>
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
