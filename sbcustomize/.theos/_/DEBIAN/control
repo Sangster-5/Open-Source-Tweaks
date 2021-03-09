@@ -5,6 +5,6 @@ Description: Tweak that allows you to customize iOS in many ways for free. Suppo
 Maintainer: Sangster5
 Author: Sangster5
 Section: Tweaks
-Depends: mobilesubstrate (>= 0.9.5000), com.spark.libsparkcolourpicker, preferenceloader
+Depends: mobilesubstrate (>= 0.9.5000)
 Version: 0.1.4
 Installed-Size: 1364

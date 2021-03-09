@@ -1,6 +1,4 @@
 #import <UIKit/UIKit.h>
-#import "SparkColourPickerUtils.h"
-
 
 //Hides Icon Labels
 @interface SBIconLegibilityLabelView : UIView
