@@ -12,12 +12,6 @@
 		</dict>
 		<dict>
 			<key>cell</key>
-			<string>PSStaticTextCell</string>
-			<key>label</key>
-			<string>By Sangster5</string>
-		</dict>
-		<dict>
-			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>label</key>
 			<string>Home Screen</string>
@@ -272,6 +266,32 @@
             <key>action</key>
             <string>respring</string>
         </dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Credits</string>
+		</dict>
+		<dict>
+			<key>cellClass</key>
+			<string>HBLinkTableCell</string>
+			<key>label</key>
+			<string>Sangster5</string>
+			<key>subtitle</key>
+			<string>Developer</string>
+			<key>url</key>
+			<string>https://github.com/sangster-5</string>
+		</dict>
+		<dict>
+			<key>cellClass</key>
+			<string>HBLinkTableCell</string>
+			<key>label</key>
+			<string>@DevBedtime on Twitter</string>
+			<key>subtitle</key>
+			<string>Icon, Logo and Banner.</string>
+			<key>url</key>
+			<string>https://twitter.com/DevBedtime</string>
+		</dict>
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
