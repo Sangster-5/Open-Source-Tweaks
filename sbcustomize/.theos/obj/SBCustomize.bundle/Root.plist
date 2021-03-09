@@ -296,17 +296,7 @@
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>label</key>
-			<string>Links</string>
-		</dict>
-		<dict>
-			<key>cellClass</key>
-			<string>HBLinkTableCell</string>
-			<key>label</key>
-			<string>Sangster_5 on Reddit</string>
-			<key>subtitle</key>
-			<string>Sangster_5</string>
-			<key>url</key>
-			<string>https://reddit.com/user/sangster_5</string>
+			<string>Donate</string>
 		</dict>
 		<dict>
 			<key>cellClass</key>
