@@ -12,6 +12,12 @@
 		</dict>
 		<dict>
 			<key>cell</key>
+			<string>PSStaticTextCell</string>
+			<key>label</key>
+			<string>By Sangster5</string>
+		</dict>
+		<dict>
+			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>label</key>
 			<string>Home Screen</string>
