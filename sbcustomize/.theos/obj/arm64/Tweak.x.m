@@ -27,7 +27,7 @@
 #define _LOGOS_RETURN_RETAINED
 #endif
 
-@class NCNotificationListView; @class SBIconRecentlyUpdatedLabelAccessoryView; @class PSCapacityBarCell; @class SBIconImageView; @class _UIStatusBarStringView; @class SBIconBadgeView; @class SBIconLegibilityLabelView; @class _UIStatusBar; @class SBDockView; @class NCNotificationListSectionRevealHintView; @class SBIconListPageControl; @class SBIconBetaLabelAccessoryView; 
+@class SBIconRecentlyUpdatedLabelAccessoryView; @class _UIStatusBar; @class NCNotificationListSectionRevealHintView; @class SBIconBetaLabelAccessoryView; @class SBIconBadgeView; @class SBIconImageView; @class PSCapacityBarCell; @class SBIconLegibilityLabelView; @class NCNotificationListView; @class SBIconListPageControl; @class SBDockView; @class _UIStatusBarStringView; 
 static void (*_logos_orig$_ungrouped$SBIconLegibilityLabelView$layoutSubviews)(_LOGOS_SELF_TYPE_NORMAL SBIconLegibilityLabelView* _LOGOS_SELF_CONST, SEL); static void _logos_method$_ungrouped$SBIconLegibilityLabelView$layoutSubviews(_LOGOS_SELF_TYPE_NORMAL SBIconLegibilityLabelView* _LOGOS_SELF_CONST, SEL); static void (*_logos_orig$_ungrouped$_UIStatusBar$layoutSubviews)(_LOGOS_SELF_TYPE_NORMAL _UIStatusBar* _LOGOS_SELF_CONST, SEL); static void _logos_method$_ungrouped$_UIStatusBar$layoutSubviews(_LOGOS_SELF_TYPE_NORMAL _UIStatusBar* _LOGOS_SELF_CONST, SEL); static void (*_logos_orig$_ungrouped$_UIStatusBarStringView$layoutSubviews)(_LOGOS_SELF_TYPE_NORMAL _UIStatusBarStringView* _LOGOS_SELF_CONST, SEL); static void _logos_method$_ungrouped$_UIStatusBarStringView$layoutSubviews(_LOGOS_SELF_TYPE_NORMAL _UIStatusBarStringView* _LOGOS_SELF_CONST, SEL); static void (*_logos_orig$_ungrouped$_UIStatusBarStringView$setText$)(_LOGOS_SELF_TYPE_NORMAL _UIStatusBarStringView* _LOGOS_SELF_CONST, SEL, id); static void _logos_method$_ungrouped$_UIStatusBarStringView$setText$(_LOGOS_SELF_TYPE_NORMAL _UIStatusBarStringView* _LOGOS_SELF_CONST, SEL, id); static void (*_logos_orig$_ungrouped$NCNotificationListView$layoutSubviews)(_LOGOS_SELF_TYPE_NORMAL NCNotificationListView* _LOGOS_SELF_CONST, SEL); static void _logos_method$_ungrouped$NCNotificationListView$layoutSubviews(_LOGOS_SELF_TYPE_NORMAL NCNotificationListView* _LOGOS_SELF_CONST, SEL); static void (*_logos_orig$_ungrouped$NCNotificationListSectionRevealHintView$layoutSubviews)(_LOGOS_SELF_TYPE_NORMAL NCNotificationListSectionRevealHintView* _LOGOS_SELF_CONST, SEL); static void _logos_method$_ungrouped$NCNotificationListSectionRevealHintView$layoutSubviews(_LOGOS_SELF_TYPE_NORMAL NCNotificationListSectionRevealHintView* _LOGOS_SELF_CONST, SEL); static void (*_logos_orig$_ungrouped$SBIconListPageControl$layoutSubviews)(_LOGOS_SELF_TYPE_NORMAL SBIconListPageControl* _LOGOS_SELF_CONST, SEL); static void _logos_method$_ungrouped$SBIconListPageControl$layoutSubviews(_LOGOS_SELF_TYPE_NORMAL SBIconListPageControl* _LOGOS_SELF_CONST, SEL); static void (*_logos_orig$_ungrouped$PSCapacityBarCell$layoutSubviews)(_LOGOS_SELF_TYPE_NORMAL PSCapacityBarCell* _LOGOS_SELF_CONST, SEL); static void _logos_method$_ungrouped$PSCapacityBarCell$layoutSubviews(_LOGOS_SELF_TYPE_NORMAL PSCapacityBarCell* _LOGOS_SELF_CONST, SEL); static void (*_logos_orig$_ungrouped$SBIconBadgeView$layoutSubviews)(_LOGOS_SELF_TYPE_NORMAL SBIconBadgeView* _LOGOS_SELF_CONST, SEL); static void _logos_method$_ungrouped$SBIconBadgeView$layoutSubviews(_LOGOS_SELF_TYPE_NORMAL SBIconBadgeView* _LOGOS_SELF_CONST, SEL); static void (*_logos_orig$_ungrouped$SBIconBetaLabelAccessoryView$layoutSubviews)(_LOGOS_SELF_TYPE_NORMAL SBIconBetaLabelAccessoryView* _LOGOS_SELF_CONST, SEL); static void _logos_method$_ungrouped$SBIconBetaLabelAccessoryView$layoutSubviews(_LOGOS_SELF_TYPE_NORMAL SBIconBetaLabelAccessoryView* _LOGOS_SELF_CONST, SEL); static void (*_logos_orig$_ungrouped$SBIconRecentlyUpdatedLabelAccessoryView$layoutSubviews)(_LOGOS_SELF_TYPE_NORMAL SBIconRecentlyUpdatedLabelAccessoryView* _LOGOS_SELF_CONST, SEL); static void _logos_method$_ungrouped$SBIconRecentlyUpdatedLabelAccessoryView$layoutSubviews(_LOGOS_SELF_TYPE_NORMAL SBIconRecentlyUpdatedLabelAccessoryView* _LOGOS_SELF_CONST, SEL); static void (*_logos_orig$_ungrouped$SBIconImageView$layoutSubviews)(_LOGOS_SELF_TYPE_NORMAL SBIconImageView* _LOGOS_SELF_CONST, SEL); static void _logos_method$_ungrouped$SBIconImageView$layoutSubviews(_LOGOS_SELF_TYPE_NORMAL SBIconImageView* _LOGOS_SELF_CONST, SEL); static void (*_logos_orig$_ungrouped$SBDockView$layoutSubviews)(_LOGOS_SELF_TYPE_NORMAL SBDockView* _LOGOS_SELF_CONST, SEL); static void _logos_method$_ungrouped$SBDockView$layoutSubviews(_LOGOS_SELF_TYPE_NORMAL SBDockView* _LOGOS_SELF_CONST, SEL); 
 
 #line 8 "Tweak.x"
@@ -75,16 +75,47 @@ static void _logos_method$_ungrouped$_UIStatusBar$layoutSubviews(_LOGOS_SELF_TYP
 static void _logos_method$_ungrouped$_UIStatusBarStringView$layoutSubviews(_LOGOS_SELF_TYPE_NORMAL _UIStatusBarStringView* _LOGOS_SELF_CONST __unused self, SEL __unused _cmd) {
     NSDictionary *bundleDefaults = [[NSUserDefaults standardUserDefaults]persistentDomainForName:@"com.sangster.sbcustomizepreferences"];
     
-    NSString *statusText = [bundleDefaults valueForKey:@"statusText"];
-    id enableCustom = [bundleDefaults valueForKey:@"enableCustom"];
     
-    if ([enableCustom isEqual:@1]) {
-        [self setText:statusText];
-    } else {
+    NSString *carrierText = [bundleDefaults valueForKey:@"carrierText"];
+    id enableCustomCarrier = [bundleDefaults valueForKey:@"enableCustomCarrier"];
+    
+    if([enableCustomCarrier isEqual:@1] && ![carrierText isEqual:@""]) {
+        if(![self.text containsString:@"%"]) {
+            
+            [self setText:carrierText];
+            
+        } else {
+            _logos_orig$_ungrouped$_UIStatusBarStringView$layoutSubviews(self, _cmd);
+        }
+    
+    }
+    
+    else if([enableCustomCarrier isEqual:@0]) {
         _logos_orig$_ungrouped$_UIStatusBarStringView$layoutSubviews(self, _cmd);
     }
     
-    _logos_orig$_ungrouped$_UIStatusBarStringView$layoutSubviews(self, _cmd);
+    
+    
+    NSString *batteryText = [bundleDefaults valueForKey:@"batteryText"];
+    id enableCustomBatteryText = [bundleDefaults valueForKey:@"enableCustomBatteryText"];
+    
+    if([enableCustomBatteryText isEqual:@1] && ![batteryText isEqual:@""]) {
+        if([self.text containsString:@"%"]) {
+            
+            [self setText:batteryText];
+            
+        } else {
+            _logos_orig$_ungrouped$_UIStatusBarStringView$layoutSubviews(self, _cmd);
+        }
+    
+    }
+    
+    else if([enableCustomBatteryText isEqual:@0]) {
+        _logos_orig$_ungrouped$_UIStatusBarStringView$layoutSubviews(self, _cmd);
+    }
+    
+    
+    
 }
 
 static void _logos_method$_ungrouped$_UIStatusBarStringView$setText$(_LOGOS_SELF_TYPE_NORMAL _UIStatusBarStringView* _LOGOS_SELF_CONST __unused self, SEL __unused _cmd, id arg1) {
@@ -310,4 +341,4 @@ static void _logos_method$_ungrouped$SBDockView$layoutSubviews(_LOGOS_SELF_TYPE_
 
 static __attribute__((constructor)) void _logosLocalInit() {
 {Class _logos_class$_ungrouped$SBIconLegibilityLabelView = objc_getClass("SBIconLegibilityLabelView"); { MSHookMessageEx(_logos_class$_ungrouped$SBIconLegibilityLabelView, @selector(layoutSubviews), (IMP)&_logos_method$_ungrouped$SBIconLegibilityLabelView$layoutSubviews, (IMP*)&_logos_orig$_ungrouped$SBIconLegibilityLabelView$layoutSubviews);}Class _logos_class$_ungrouped$_UIStatusBar = objc_getClass("_UIStatusBar"); { MSHookMessageEx(_logos_class$_ungrouped$_UIStatusBar, @selector(layoutSubviews), (IMP)&_logos_method$_ungrouped$_UIStatusBar$layoutSubviews, (IMP*)&_logos_orig$_ungrouped$_UIStatusBar$layoutSubviews);}Class _logos_class$_ungrouped$_UIStatusBarStringView = objc_getClass("_UIStatusBarStringView"); { MSHookMessageEx(_logos_class$_ungrouped$_UIStatusBarStringView, @selector(layoutSubviews), (IMP)&_logos_method$_ungrouped$_UIStatusBarStringView$layoutSubviews, (IMP*)&_logos_orig$_ungrouped$_UIStatusBarStringView$layoutSubviews);}{ MSHookMessageEx(_logos_class$_ungrouped$_UIStatusBarStringView, @selector(setText:), (IMP)&_logos_method$_ungrouped$_UIStatusBarStringView$setText$, (IMP*)&_logos_orig$_ungrouped$_UIStatusBarStringView$setText$);}Class _logos_class$_ungrouped$NCNotificationListView = objc_getClass("NCNotificationListView"); { MSHookMessageEx(_logos_class$_ungrouped$NCNotificationListView, @selector(layoutSubviews), (IMP)&_logos_method$_ungrouped$NCNotificationListView$layoutSubviews, (IMP*)&_logos_orig$_ungrouped$NCNotificationListView$layoutSubviews);}Class _logos_class$_ungrouped$NCNotificationListSectionRevealHintView = objc_getClass("NCNotificationListSectionRevealHintView"); { MSHookMessageEx(_logos_class$_ungrouped$NCNotificationListSectionRevealHintView, @selector(layoutSubviews), (IMP)&_logos_method$_ungrouped$NCNotificationListSectionRevealHintView$layoutSubviews, (IMP*)&_logos_orig$_ungrouped$NCNotificationListSectionRevealHintView$layoutSubviews);}Class _logos_class$_ungrouped$SBIconListPageControl = objc_getClass("SBIconListPageControl"); { MSHookMessageEx(_logos_class$_ungrouped$SBIconListPageControl, @selector(layoutSubviews), (IMP)&_logos_method$_ungrouped$SBIconListPageControl$layoutSubviews, (IMP*)&_logos_orig$_ungrouped$SBIconListPageControl$layoutSubviews);}Class _logos_class$_ungrouped$PSCapacityBarCell = objc_getClass("PSCapacityBarCell"); { MSHookMessageEx(_logos_class$_ungrouped$PSCapacityBarCell, @selector(layoutSubviews), (IMP)&_logos_method$_ungrouped$PSCapacityBarCell$layoutSubviews, (IMP*)&_logos_orig$_ungrouped$PSCapacityBarCell$layoutSubviews);}Class _logos_class$_ungrouped$SBIconBadgeView = objc_getClass("SBIconBadgeView"); { MSHookMessageEx(_logos_class$_ungrouped$SBIconBadgeView, @selector(layoutSubviews), (IMP)&_logos_method$_ungrouped$SBIconBadgeView$layoutSubviews, (IMP*)&_logos_orig$_ungrouped$SBIconBadgeView$layoutSubviews);}Class _logos_class$_ungrouped$SBIconBetaLabelAccessoryView = objc_getClass("SBIconBetaLabelAccessoryView"); { MSHookMessageEx(_logos_class$_ungrouped$SBIconBetaLabelAccessoryView, @selector(layoutSubviews), (IMP)&_logos_method$_ungrouped$SBIconBetaLabelAccessoryView$layoutSubviews, (IMP*)&_logos_orig$_ungrouped$SBIconBetaLabelAccessoryView$layoutSubviews);}Class _logos_class$_ungrouped$SBIconRecentlyUpdatedLabelAccessoryView = objc_getClass("SBIconRecentlyUpdatedLabelAccessoryView"); { MSHookMessageEx(_logos_class$_ungrouped$SBIconRecentlyUpdatedLabelAccessoryView, @selector(layoutSubviews), (IMP)&_logos_method$_ungrouped$SBIconRecentlyUpdatedLabelAccessoryView$layoutSubviews, (IMP*)&_logos_orig$_ungrouped$SBIconRecentlyUpdatedLabelAccessoryView$layoutSubviews);}Class _logos_class$_ungrouped$SBIconImageView = objc_getClass("SBIconImageView"); { MSHookMessageEx(_logos_class$_ungrouped$SBIconImageView, @selector(layoutSubviews), (IMP)&_logos_method$_ungrouped$SBIconImageView$layoutSubviews, (IMP*)&_logos_orig$_ungrouped$SBIconImageView$layoutSubviews);}Class _logos_class$_ungrouped$SBDockView = objc_getClass("SBDockView"); { MSHookMessageEx(_logos_class$_ungrouped$SBDockView, @selector(layoutSubviews), (IMP)&_logos_method$_ungrouped$SBDockView$layoutSubviews, (IMP*)&_logos_orig$_ungrouped$SBDockView$layoutSubviews);}} }
-#line 285 "Tweak.x"
+#line 316 "Tweak.x"

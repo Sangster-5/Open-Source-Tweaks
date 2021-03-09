@@ -14,5 +14,5 @@ SBCustomize_FILES = Tweak.x
 SBCustomize_CFLAGS = -fobjc-arc
 
 include $(THEOS_MAKE_PATH)/tweak.mk
-SUBPROJECTS += sbcustomizepreferences
+SUBPROJECTS += sbcustomize
 include $(THEOS_MAKE_PATH)/aggregate.mk

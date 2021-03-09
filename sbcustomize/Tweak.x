@@ -49,16 +49,47 @@
 -(void)layoutSubviews {
     NSDictionary *bundleDefaults = [[NSUserDefaults standardUserDefaults]persistentDomainForName:@"com.sangster.sbcustomizepreferences"];
     
-    NSString *statusText = [bundleDefaults valueForKey:@"statusText"];
-    id enableCustom = [bundleDefaults valueForKey:@"enableCustom"];
+    // Change Carrier
+    NSString *carrierText = [bundleDefaults valueForKey:@"carrierText"];
+    id enableCustomCarrier = [bundleDefaults valueForKey:@"enableCustomCarrier"];
     
-    if ([enableCustom isEqual:@1]) {
-        [self setText:statusText];
-    } else {
+    if([enableCustomCarrier isEqual:@1] && ![carrierText isEqual:@""]) {
+        if(![self.text containsString:@"%"]) {
+            
+            [self setText:carrierText];
+            
+        } else {
+            %orig;
+        }
+    
+    }
+    
+    else if([enableCustomCarrier isEqual:@0]) {
         %orig;
     }
     
-    %orig;
+    // Change Battery
+    
+    NSString *batteryText = [bundleDefaults valueForKey:@"batteryText"];
+    id enableCustomBatteryText = [bundleDefaults valueForKey:@"enableCustomBatteryText"];
+    
+    if([enableCustomBatteryText isEqual:@1] && ![batteryText isEqual:@""]) {
+        if([self.text containsString:@"%"]) {
+            
+            [self setText:batteryText];
+            
+        } else {
+            %orig;
+        }
+    
+    }
+    
+    else if([enableCustomBatteryText isEqual:@0]) {
+        %orig;
+    }
+    
+    
+    
 }
 
 -(void)setText:(id)arg1 {

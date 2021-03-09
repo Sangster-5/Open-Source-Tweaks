@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>SBCustomize Preferences</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Home Screen</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+            <false/>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomizepreferences</string>
+			<key>key</key>
+			<string>hidePageDots</string>
+			<key>label</key>
+			<string>Hide Page Dots (Respring)</string>
+		</dict>
+		<!--<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+            <false/>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomizepreferences</string>
+			<key>key</key>
+			<string>hideDockBG</string>
+			<key>label</key>
+			<string>Hide Dock Background (Respring)</string>
+		</dict>-->
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+            <false/>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomizepreferences</string>
+			<key>key</key>
+			<string>hideDock</string>
+			<key>label</key>
+			<string>Hide Dock (Respring)</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Lock Screen</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+            <false/>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomizepreferences</string>
+			<key>key</key>
+			<string>hideNoti</string>
+			<key>label</key>
+			<string>Hide Notifications</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+            <false/>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomizepreferences</string>
+			<key>key</key>
+			<string>hideOldNoti</string>
+			<key>label</key>
+			<string>Hide No Older Notifications (Respring)</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>General</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+            <false/>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomizepreferences</string>
+			<key>key</key>
+			<string>removeStatusBar</string>
+			<key>label</key>
+			<string>Hide Statusbar</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+            <false/>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomizepreferences</string>
+			<key>key</key>
+			<string>spoofStorage</string>
+			<key>label</key>
+			<string>Spoof Storage</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Icons</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+            <false/>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomizepreferences</string>
+			<key>key</key>
+			<string>removeLabels</string>
+			<key>label</key>
+			<string>Hide Icon Labels (Respring)</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+            <false/>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomizepreferences</string>
+			<key>key</key>
+			<string>hideBadges</string>
+			<key>label</key>
+			<string>Hide Icon Badges (Respring)</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+            <false/>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomizepreferences</string>
+			<key>key</key>
+			<string>hideBetaDots</string>
+			<key>label</key>
+			<string>Hide Beta Dots (Respring)</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+            <false/>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomizepreferences</string>
+			<key>key</key>
+			<string>hideUpdateDots</string>
+			<key>label</key>
+			<string>Hide Update Dots (Respring)</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+            <false/>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomizepreferences</string>
+			<key>key</key>
+			<string>hideApps</string>
+			<key>label</key>
+			<string>Make Apps Invisible (Respring)</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Custom Statusbar</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+            <false/>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomizepreferences</string>
+			<key>key</key>
+			<string>enableCustomCarrier</string>
+			<key>label</key>
+			<string>Enable Carrier Text (Respring)</string>
+		</dict>
+		<dict>
+            <key>cell</key>
+            <string>PSEditTextCell</string>
+            <key>label</key>
+            <string>Carrier Text (Respring):</string>
+			<key>key</key>
+			<string>carrierText</string>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomizepreferences</string>
+        </dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+            <false/>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomizepreferences</string>
+			<key>key</key>
+			<string>enableCustomBatteryText</string>
+			<key>label</key>
+			<string>Enable Battery Text (Respring)</string>
+		</dict>
+		<dict>
+            <key>cell</key>
+            <string>PSEditTextCell</string>
+            <key>label</key>
+            <string>Battery Text (Respring):</string>
+			<key>key</key>
+			<string>batteryText</string>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomizepreferences</string>
+        </dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Respring to save changes</string>
+		</dict>
+		<dict>
+            <key>cell</key>
+            <string>PSButtonCell</string>
+            <key>label</key>
+            <string>Respring</string>
+            <key>action</key>
+            <string>respring</string>
+        </dict>
+	</array>
+	<key>title</key>
+	<string>SBCustomize</string>
+</dict>
+</plist>
