@@ -7,6 +7,7 @@ BUNDLE_NAME = SBCustomize
 SBCustomize_FILES = sangRootListController.m
 SBCustomize_FRAMEWORKS = UIKit
 SBCustomize_PRIVATE_FRAMEWORKS = Preferences
+SBCustomize_EXTRA_FRAMEWORKS += CepheiPrefs
 SBCustomize_INSTALL_PATH = /Library/PreferenceBundles
 SBCustomize_CFLAGS = -fobjc-arc
 

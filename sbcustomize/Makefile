@@ -15,5 +15,6 @@ SBCustomize_CFLAGS = -fobjc-arc
 
 include $(THEOS_MAKE_PATH)/tweak.mk
 SUBPROJECTS += sbcustomize
+SBCustomize_EXTRA_FRAMEWORKS += CepheiPrefs
 include $(THEOS_MAKE_PATH)/aggregate.mk
 export TWEAKNAME_LIBRARIES = sparkcolourpicker

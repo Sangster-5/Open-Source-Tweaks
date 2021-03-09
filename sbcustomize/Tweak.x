@@ -313,39 +313,6 @@
 
 %end
 
-
-// Change Label Text Colour
-
-/*%hook UILabel
-
--(void)layoutSubviews {
-    self.textColor = [UIColor blueColor];
-}
-
-%end
-
-@interface UITableViewLabel : UILabel
-@end
-
-%hook UITableViewLabel
-
--(void)layoutSubviews {
-    self.textColor = [UIColor blueColor];
-}
-
-%end
-
-@interface UITabBarButtonLabel : UILabel
-@end
-
-%hook UITabBarButtonLabel
-
--(void)layoutSubviews {
-    self.textColor = [UIColor blueColor];
-}
-
-%end*/
-
 // Remove Cloud Icon
 
 @interface SBIconCloudLabelAccessoryView : UIView
@@ -368,3 +335,27 @@
 }
 
 %end
+
+// Hide FaceID Lock
+
+@interface BSUICAPackageView : UIView
+@end
+
+%hook BSUICAPackageView
+
+-(void)layoutSubviews {
+    NSDictionary *bundleDefaults = [[NSUserDefaults standardUserDefaults]persistentDomainForName:@"com.sangster.sbcustomizepreferences"];
+    
+    id hideFaceIDLock = [bundleDefaults valueForKey:@"hideFaceIDLock"];
+    
+    if([hideFaceIDLock isEqual:@1]) {
+        [self setHidden:YES];
+    }
+    
+    else if([hideFaceIDLock isEqual:@0]) {
+        %orig;
+    }
+}
+
+%end
+

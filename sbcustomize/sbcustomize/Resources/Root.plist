@@ -32,7 +32,7 @@
 			<key>key</key>
 			<string>hidePageDots</string>
 			<key>label</key>
-			<string>Hide Page Dots (Respring)</string>
+			<string>Hide Page Dots</string>
 		</dict>
 		<!--<dict>
 			<key>cell</key>
@@ -56,7 +56,7 @@
 			<key>key</key>
 			<string>hideDock</string>
 			<key>label</key>
-			<string>Hide Dock (Respring)</string>
+			<string>Hide Dock</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -86,7 +86,19 @@
 			<key>key</key>
 			<string>hideOldNoti</string>
 			<key>label</key>
-			<string>Hide No Older Notifications (Respring)</string>
+			<string>Hide No Older Notifications</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+            <false/>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomizepreferences</string>
+			<key>key</key>
+			<string>hideFaceIDLock</string>
+			<key>label</key>
+			<string>Hide FaceID Lock</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -134,7 +146,7 @@
 			<key>key</key>
 			<string>removeLabels</string>
 			<key>label</key>
-			<string>Hide Icon Labels (Respring)</string>
+			<string>Hide Icon Labels</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -146,7 +158,7 @@
 			<key>key</key>
 			<string>hideBadges</string>
 			<key>label</key>
-			<string>Hide Icon Badges (Respring)</string>
+			<string>Hide Icon Badges</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -158,7 +170,7 @@
 			<key>key</key>
 			<string>hideBetaDots</string>
 			<key>label</key>
-			<string>Hide Beta Dots (Respring)</string>
+			<string>Hide Beta Dots</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -170,7 +182,7 @@
 			<key>key</key>
 			<string>hideUpdateDots</string>
 			<key>label</key>
-			<string>Hide Update Dots (Respring)</string>
+			<string>Hide Update Dots</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -182,7 +194,7 @@
 			<key>key</key>
 			<string>hideCloudIcon</string>
 			<key>label</key>
-			<string>Hide Cloud Icon (Respring)</string>
+			<string>Hide Cloud Icon</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -194,7 +206,7 @@
 			<key>key</key>
 			<string>hideApps</string>
 			<key>label</key>
-			<string>Make Apps Invisible (Respring)</string>
+			<string>Make Apps Invisible</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -212,13 +224,13 @@
 			<key>key</key>
 			<string>enableCustomCarrier</string>
 			<key>label</key>
-			<string>Enable Carrier Text (Respring)</string>
+			<string>Enable Carrier Text</string>
 		</dict>
 		<dict>
             <key>cell</key>
             <string>PSEditTextCell</string>
             <key>label</key>
-            <string>Carrier Text (Respring):</string>
+            <string>Carrier Text:</string>
 			<key>key</key>
 			<string>carrierText</string>
 			<key>defaults</key>
@@ -234,24 +246,18 @@
 			<key>key</key>
 			<string>enableCustomBatteryText</string>
 			<key>label</key>
-			<string>Enable Battery Text (Respring)</string>
+			<string>Enable Battery Text</string>
 		</dict>
 		<dict>
             <key>cell</key>
             <string>PSEditTextCell</string>
             <key>label</key>
-            <string>Battery Text (Respring):</string>
+            <string>Battery Text:</string>
 			<key>key</key>
 			<string>batteryText</string>
 			<key>defaults</key>
 			<string>com.sangster.sbcustomizepreferences</string>
         </dict>
-		<dict>
-			<key>cell</key>
-			<string>PSGroupCell</string>
-			<key>label</key>
-			<string>Text</string>
-		</dict>
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
@@ -266,6 +272,26 @@
             <key>action</key>
             <string>respring</string>
         </dict>
+		<dict>
+			<key>cellClass</key>
+			<string>HBLinkTableCell</string>
+			<key>label</key>
+			<string>Sangster_5 on Reddit</string>
+			<key>subtitle</key>
+			<string>Sangster_5</string>
+			<key>url</key>
+			<string>https://reddit.com/user/sangster_5</string>
+		</dict>
+		<dict>
+			<key>cellClass</key>
+			<string>HBLinkTableCell</string>
+			<key>label</key>
+			<string>Donate To Sangster5</string>
+			<key>subtitle</key>
+			<string>Appreciated</string>
+			<key>url</key>
+			<string>https://paypal.me/sangster5</string>
+		</dict>
 	</array>
 	<key>title</key>
 	<string>SBCustomize</string>
