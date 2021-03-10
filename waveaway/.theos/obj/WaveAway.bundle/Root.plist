@@ -17,6 +17,8 @@
 			<string>Home Screen</string>
 		</dict>
 		<dict>
+			<key>PostNotification</key>
+			<string>com.sangster.sbcustomize/ReloadPrefs</string>
 			<key>cell</key>
 			<string>PSSwitchCell</string>
 			<key>default</key>
@@ -28,7 +30,9 @@
 			<key>label</key>
 			<string>Hide Page Dots</string>
 		</dict>
-		<!--<dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.sangster.sbcustomize/ReloadPrefs</string>
 			<key>cell</key>
 			<string>PSSwitchCell</string>
 			<key>default</key>
@@ -39,8 +43,10 @@
 			<string>hideDockBG</string>
 			<key>label</key>
 			<string>Hide Dock Background (Respring)</string>
-		</dict>-->
+		</dict>
 		<dict>
+			<key>PostNotification</key>
+			<string>com.sangster.sbcustomize/ReloadPrefs</string>
 			<key>cell</key>
 			<string>PSSwitchCell</string>
 			<key>default</key>
@@ -59,6 +65,8 @@
 			<string>Lock Screen</string>
 		</dict>
 		<dict>
+			<key>PostNotification</key>
+			<string>com.sangster.sbcustomize/ReloadPrefs</string>
 			<key>cell</key>
 			<string>PSSwitchCell</string>
 			<key>default</key>
@@ -71,6 +79,8 @@
 			<string>Hide Notifications</string>
 		</dict>
 		<dict>
+			<key>PostNotification</key>
+			<string>com.sangster.sbcustomize/ReloadPrefs</string>
 			<key>cell</key>
 			<string>PSSwitchCell</string>
 			<key>default</key>
@@ -83,6 +93,8 @@
 			<string>Hide No Older Notifications</string>
 		</dict>
 		<dict>
+			<key>PostNotification</key>
+			<string>com.sangster.sbcustomize/ReloadPrefs</string>
 			<key>cell</key>
 			<string>PSSwitchCell</string>
 			<key>default</key>
@@ -101,6 +113,8 @@
 			<string>General</string>
 		</dict>
 		<dict>
+			<key>PostNotification</key>
+			<string>com.sangster.sbcustomize/ReloadPrefs</string>
 			<key>cell</key>
 			<string>PSSwitchCell</string>
 			<key>default</key>
@@ -113,6 +127,8 @@
 			<string>Hide Statusbar</string>
 		</dict>
 		<dict>
+			<key>PostNotification</key>
+			<string>com.sangster.sbcustomize/ReloadPrefs</string>
 			<key>cell</key>
 			<string>PSSwitchCell</string>
 			<key>default</key>
@@ -131,6 +147,8 @@
 			<string>Icons</string>
 		</dict>
 		<dict>
+			<key>PostNotification</key>
+			<string>com.sangster.sbcustomize/ReloadPrefs</string>
 			<key>cell</key>
 			<string>PSSwitchCell</string>
 			<key>default</key>
@@ -143,6 +161,8 @@
 			<string>Hide Icon Labels</string>
 		</dict>
 		<dict>
+			<key>PostNotification</key>
+			<string>com.sangster.sbcustomize/ReloadPrefs</string>
 			<key>cell</key>
 			<string>PSSwitchCell</string>
 			<key>default</key>
@@ -155,6 +175,8 @@
 			<string>Hide Icon Badges</string>
 		</dict>
 		<dict>
+			<key>PostNotification</key>
+			<string>com.sangster.sbcustomize/ReloadPrefs</string>
 			<key>cell</key>
 			<string>PSSwitchCell</string>
 			<key>default</key>
@@ -167,6 +189,8 @@
 			<string>Hide Beta Dots</string>
 		</dict>
 		<dict>
+			<key>PostNotification</key>
+			<string>com.sangster.sbcustomize/ReloadPrefs</string>
 			<key>cell</key>
 			<string>PSSwitchCell</string>
 			<key>default</key>
@@ -179,6 +203,8 @@
 			<string>Hide Update Dots</string>
 		</dict>
 		<dict>
+			<key>PostNotification</key>
+			<string>com.sangster.sbcustomize/ReloadPrefs</string>
 			<key>cell</key>
 			<string>PSSwitchCell</string>
 			<key>default</key>
@@ -191,6 +217,8 @@
 			<string>Hide Cloud Icon</string>
 		</dict>
 		<dict>
+			<key>PostNotification</key>
+			<string>com.sangster.sbcustomize/ReloadPrefs</string>
 			<key>cell</key>
 			<string>PSSwitchCell</string>
 			<key>default</key>
@@ -202,13 +230,15 @@
 			<key>label</key>
 			<string>Make Apps Invisible</string>
 		</dict>
-		<dict>
+		<!--<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>label</key>
 			<string>Custom Statusbar</string>
 		</dict>
 		<dict>
+			<key>PostNotification</key>
+			<string>com.sangster.sbcustomize/ReloadPrefs</string>
 			<key>cell</key>
 			<string>PSSwitchCell</string>
 			<key>default</key>
@@ -221,6 +251,8 @@
 			<string>Enable Carrier Text</string>
 		</dict>
 		<dict>
+			<key>PostNotification</key>
+			<string>com.sangster.sbcustomize/ReloadPrefs</string>
             <key>cell</key>
             <string>PSEditTextCell</string>
             <key>label</key>
@@ -231,6 +263,8 @@
 			<string>com.sangster.sbcustomizepreferences</string>
         </dict>
 		<dict>
+			<key>PostNotification</key>
+			<string>com.sangster.sbcustomize/ReloadPrefs</string>
 			<key>cell</key>
 			<string>PSSwitchCell</string>
 			<key>default</key>
@@ -243,6 +277,8 @@
 			<string>Enable Battery Text</string>
 		</dict>
 		<dict>
+			<key>PostNotification</key>
+			<string>com.sangster.sbcustomize/ReloadPrefs</string>
             <key>cell</key>
             <string>PSEditTextCell</string>
             <key>label</key>
@@ -251,7 +287,7 @@
 			<string>batteryText</string>
 			<key>defaults</key>
 			<string>com.sangster.sbcustomizepreferences</string>
-        </dict>
+        </dict>-->
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>

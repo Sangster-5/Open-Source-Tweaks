@@ -13,7 +13,12 @@ TWEAK_NAME = WaveAway
 WaveAway_FILES = Tweak.x
 WaveAway_CFLAGS = -fobjc-arc
 
-include $(THEOS_MAKE_PATH)/tweak.mk
 SUBPROJECTS += WaveAway
-SBCustomize_EXTRA_FRAMEWORKS += CepheiPrefs
+WaveAway_EXTRA_FRAMEWORKS += Cephei
+
+
+include $(THEOS_MAKE_PATH)/tweak.mk
 include $(THEOS_MAKE_PATH)/aggregate.mk
+
+after-install::
+	install.exec "sbreload"

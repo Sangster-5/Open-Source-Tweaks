@@ -7,7 +7,7 @@ BUNDLE_NAME = WaveAway
 WaveAway_FILES = sangRootListController.m
 WaveAway_FRAMEWORKS = UIKit
 WaveAway_PRIVATE_FRAMEWORKS = Preferences
-WaveAway_EXTRA_FRAMEWORKS += CepheiPrefs
+WaveAway_EXTRA_FRAMEWORKS += Cephei CepheiPrefs
 WaveAway_INSTALL_PATH = /Library/PreferenceBundles
 WaveAway_CFLAGS = -fobjc-arc
 

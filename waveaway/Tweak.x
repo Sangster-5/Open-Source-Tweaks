@@ -1,54 +1,90 @@
 #import <UIKit/UIKit.h>
+#import <Cephei/HBPreferences.h>
 
-//Hides Icon Labels
+static BOOL removeLabels;
+static BOOL removeStatusBar;
+static BOOL hideOldNoti;
+static BOOL hideNoti;
+static BOOL hidePageDots;
+static BOOL spoofStorage;
+static BOOL hideBadges;
+static BOOL hideBetaDots;
+static BOOL hideUpdateDots;
+static BOOL hideApps;
+static BOOL hideDock;
+static BOOL hideDockBG;
+static BOOL hideCloudIcon;
+static BOOL hideFaceIDLock;
+
+//Interfaces
+
 @interface SBIconLegibilityLabelView : UIView
 @end
+@interface _UIStatusBar : UIView
+@end
+@interface _UIStatusBarStringView : UILabel
+@end
+@interface NCNotificationListView : UIView
+@end
+@interface NCNotificationListSectionRevealHintView : UIView
+@end
+@interface SBIconListPageControl : UIView
+@end
+@interface PSCapacityBarCell : UIView
+@end
+@interface SBIconBadgeView : UIView
+@end
+@interface SBIconBetaLabelAccessoryView : UIView
+@end
+@interface SBIconRecentlyUpdatedLabelAccessoryView : UIView
+@end
+@interface SBIconImageView : UIView
+@end
+@interface SBDockView : UIView
+@end
+@interface SBIconCloudLabelAccessoryView : UIView
+@end
+@interface BSUICAPackageView : UIView
+@end
 
+// End Interfaces
+
+%group WaveAway
+
+//Hides Icon Labels
 %hook SBIconLegibilityLabelView
 -(void)layoutSubviews {
-    NSDictionary *bundleDefaults = [[NSUserDefaults standardUserDefaults]persistentDomainForName:@"com.sangster.sbcustomizepreferences"];
     
-    id removeLabels = [bundleDefaults valueForKey:@"removeLabels"];
-    
-    if ([removeLabels isEqual:@1]) {
+    if (removeLabels) {
         [self removeFromSuperview];
         
-    } else {
-        %orig;
+    }
+    
+    else {
+        return %orig;
     }
 }
 %end
 
 // Hides  statusbar
-@interface _UIStatusBar : UIView
-@end
-
 %hook _UIStatusBar
 
 -(void)layoutSubviews {
-    NSDictionary *bundleDefaults = [[NSUserDefaults standardUserDefaults]persistentDomainForName:@"com.sangster.sbcustomizepreferences"];
-    id removeStatusBar = [bundleDefaults valueForKey:@"removeStatusBar"];
+    if (removeStatusBar) {
+        [self setHidden:YES];
+    }
     
-    if ([removeStatusBar isEqual:@1]) {
-        self.hidden = YES;
-    }
-    else if ([removeStatusBar isEqual:@0]){
-        self.hidden = NO;
-    }
+    return %orig;
 }
 
 %end
 
 //Changes Statusbar text
-@interface _UIStatusBarStringView : UILabel
-@end
-
-%hook _UIStatusBarStringView
+/*%hook _UIStatusBarStringView
 
 -(void)layoutSubviews {
-    NSDictionary *bundleDefaults = [[NSUserDefaults standardUserDefaults]persistentDomainForName:@"com.sangster.sbcustomizepreferences"];
-    
     // Change Carrier
+    NSDictionary *bundleDefaults = [[NSUserDefaults standardUserDefaults]persistentDomainForName:@"com.sangster.sbcustomizepreferences"];
     NSString *carrierText = [bundleDefaults valueForKey:@"carrierText"];
     id enableCustomCarrier = [bundleDefaults valueForKey:@"enableCustomCarrier"];
     
@@ -95,267 +131,180 @@
     %orig;
 }
 
-%end
+%end*/
 
 //Hides Notifications
-@interface NCNotificationListView : UIView
-@end
-
 %hook NCNotificationListView
 
 -(void)layoutSubviews {
-    NSDictionary *bundleDefaults = [[NSUserDefaults standardUserDefaults]persistentDomainForName:@"com.sangster.sbcustomizepreferences"];
-    
-    id hideNoti = [bundleDefaults valueForKey:@"hideNoti"];
-    
-    if ([hideNoti isEqual:@1]) {
-        self.hidden = YES;
+    if (hideNoti) {
+        [self setHidden:YES];
     }
-    else if ([hideNoti isEqual:@0]){
-        self.hidden = NO;
-        %orig;
-    }
+    
+    return %orig;
 }
 
 %end
 
 // Hides No Older Notifications
-@interface NCNotificationListSectionRevealHintView : UIView
-@end
-
 %hook NCNotificationListSectionRevealHintView
 
 -(void)layoutSubviews {
-    NSDictionary *bundleDefaults = [[NSUserDefaults standardUserDefaults]persistentDomainForName:@"com.sangster.sbcustomizepreferences"];
-    
-    id hideOldNoti = [bundleDefaults valueForKey:@"hideOldNoti"];
     UILabel *_revealHintTitle = [self valueForKey:@"_revealHintTitle"];
-    if ([hideOldNoti isEqual:@1]) {
+    if (hideOldNoti) {
         [_revealHintTitle setHidden:YES];
     }
-    else if ([hideOldNoti isEqual:@0]) {
-        %orig;
-    }
+    
+    return %orig;
 }
 
 %end
 
 //Hides Page Dots
-@interface SBIconListPageControl : UIView
-@end
-
 %hook SBIconListPageControl
 
 -(void)layoutSubviews {
-    NSDictionary *bundleDefaults = [[NSUserDefaults standardUserDefaults]persistentDomainForName:@"com.sangster.sbcustomizepreferences"];
-    
-    id hidePageDots = [bundleDefaults valueForKey:@"hidePageDots"];
-    
-    if ([hidePageDots isEqual:@1]) {
+    if (hidePageDots) {
         [self setHidden:YES];
     }
     
-    else if ([hidePageDots isEqual:@0]) {
-        [self setHidden:NO];
-    }
+    return %orig;
     
 }
 
 %end
 
 //Spoofs Storage
-@interface PSCapacityBarCell : UIView
-@end
-
 %hook PSCapacityBarCell
 
 -(void)layoutSubviews {
-    NSDictionary *bundleDefaults = [[NSUserDefaults standardUserDefaults]persistentDomainForName:@"com.sangster.sbcustomizepreferences"];
-    
-    id spoofStorage = [bundleDefaults valueForKey:@"spoofStorage"];
     UILabel *_sizeLabel = [self valueForKey:@"_sizeLabel"];
     
-    if ([spoofStorage isEqual:@1]) {
+    if (spoofStorage) {
         [_sizeLabel setText:@"100TB free"];
     }
     
-    else if ([spoofStorage isEqual:@0]) {
-        %orig;
-    }
-    /*UILabel *_titleLabel = [self valueForKey:@"_titleLabel"];
-    [_titleLabel setText:@"Apple Prototype"];*/
+    return %orig;
 
 }
 %end
 
 // Removes App Badges
-
-@interface SBIconBadgeView : UIView
-@end
-
 %hook SBIconBadgeView
 
 -(void)layoutSubviews {
-    NSDictionary *bundleDefaults = [[NSUserDefaults standardUserDefaults]persistentDomainForName:@"com.sangster.sbcustomizepreferences"];
-    
-    id hideBadges = [bundleDefaults valueForKey:@"hideBadges"];
-    
-    if ([hideBadges isEqual:@1]) {
+    if (hideBadges) {
         [self setHidden:YES];
     }
     
-    else if ([hideBadges isEqual:@0]) {
-        [self setHidden:NO];
-    }
+    return %orig;
 }
 
 %end
 
 // Hides Beta Dots
-
-@interface SBIconBetaLabelAccessoryView : UIView
-@end
-
 %hook SBIconBetaLabelAccessoryView
 
 -(void)layoutSubviews {
-    NSDictionary *bundleDefaults = [[NSUserDefaults standardUserDefaults]persistentDomainForName:@"com.sangster.sbcustomizepreferences"];
-    
-    id hideBetaDots = [bundleDefaults valueForKey:@"hideBetaDots"];
-    
-    if ([hideBetaDots isEqual:@1]) {
+    if (hideBetaDots) {
         [self setHidden:YES];
     }
     
-    else if ([hideBetaDots isEqual:@0]) {
-        [self setHidden:NO];
-    }
+    return %orig;
 }
 
 %end
 
 // Hides Update Dots
-
-@interface SBIconRecentlyUpdatedLabelAccessoryView : UIView
-@end
-
 %hook SBIconRecentlyUpdatedLabelAccessoryView
 
 -(void)layoutSubviews {
-    NSDictionary *bundleDefaults = [[NSUserDefaults standardUserDefaults]persistentDomainForName:@"com.sangster.sbcustomizepreferences"];
-    
-    id hideUpdateDots = [bundleDefaults valueForKey:@"hideUpdateDots"];
-    
-    if ([hideUpdateDots isEqual:@1]) {
+    if (hideUpdateDots) {
         [self setHidden:YES];
     }
     
-    else if ([hideUpdateDots isEqual:@0]) {
-        [self setHidden:NO];
-    }
+    return %orig;
 }
 
 %end
 
 // Hide Apps they are just invisible
-
-@interface SBIconImageView : UIView
-@end
-
 %hook SBIconImageView
 
 -(void)layoutSubviews {
-    NSDictionary *bundleDefaults = [[NSUserDefaults standardUserDefaults]persistentDomainForName:@"com.sangster.sbcustomizepreferences"];
-    
-    id hideApps = [bundleDefaults valueForKey:@"hideApps"];
-    
-    if([hideApps isEqual:@1]) {
+    if(hideApps) {
         [self setHidden:YES];
     }
     
-    else if ([hideApps isEqual:@0]) {
-        [self setHidden:NO];
-    }
+    return %orig;
 }
 
 %end
 
-// Hide Dock
-
-@interface SBDockView : UIView
-@end
-
 %hook SBDockView
 
 -(void)layoutSubviews {
-    NSDictionary *bundleDefaults = [[NSUserDefaults standardUserDefaults]persistentDomainForName:@"com.sangster.sbcustomizepreferences"];
-    
-    id hideDock = [bundleDefaults valueForKey:@"hideDock"];
-    
-    if([hideDock isEqual:@1]) {
+    // Hide Dock
+    if(hideDock) {
         [self setHidden:YES];
     }
     
-    else if([hideDock isEqual:@0]) {
-        %orig;
+    // Hide Dock Background
+    UIView *_backgroundView = [self valueForKey:@"_backgroundView"];
+    
+    if(hideDockBG) {
+        [_backgroundView setHidden:YES];
     }
     
-    /*id hideDockBG = [bundleDefaults valueForKey:@"hideDockBG"];
-    
-    if([hideDockBG isEqual:@0]) {
-        %orig;
-    }
-    
-    else if([hideDockBG isEqual:@1]) {
-        [self setHidden:NO];
-    }*/
+    return %orig;
 }
 
 %end
 
 // Remove Cloud Icon
-
-@interface SBIconCloudLabelAccessoryView : UIView
-@end
-
 %hook SBIconCloudLabelAccessoryView
 
 -(void)layoutSubviews {
-    NSDictionary *bundleDefaults = [[NSUserDefaults standardUserDefaults]persistentDomainForName:@"com.sangster.sbcustomizepreferences"];
-    
-    id hideCloudIcon = [bundleDefaults valueForKey:@"hideCloudIcon"];
-    
-    if([hideCloudIcon isEqual:@1]) {
+    if(hideCloudIcon) {
         [self setHidden:YES];
     }
     
-    else if([hideCloudIcon isEqual:@0]) {
-        %orig;
-    }
+    return %orig;
 }
 
 %end
 
 // Hide FaceID Lock
-
-@interface BSUICAPackageView : UIView
-@end
-
 %hook BSUICAPackageView
 
 -(void)layoutSubviews {
-    NSDictionary *bundleDefaults = [[NSUserDefaults standardUserDefaults]persistentDomainForName:@"com.sangster.sbcustomizepreferences"];
-    
-    id hideFaceIDLock = [bundleDefaults valueForKey:@"hideFaceIDLock"];
-    
-    if([hideFaceIDLock isEqual:@1]) {
+    if(hideFaceIDLock) {
         [self setHidden:YES];
     }
     
-    else if([hideFaceIDLock isEqual:@0]) {
-        %orig;
-    }
+    return %orig;
 }
 
 %end
+%end
 
+%ctor {
+    
+    HBPreferences *preferences = [[HBPreferences alloc] initWithIdentifier:@"com.sangster.sbcustomize"];
+    
+    [preferences registerBool:&removeLabels default:NO forKey:@"removeLabels"];
+    [preferences registerBool:&removeStatusBar default:NO forKey:@"removeStatusBar"];
+    [preferences registerBool:&hideOldNoti default:NO forKey:@"hideOldNoti"];
+    [preferences registerBool:&hideNoti default:NO forKey:@"hideNoti"];
+    [preferences registerBool:&hidePageDots default:NO forKey:@"hidePageDots"];
+    [preferences registerBool:&spoofStorage default:NO forKey:@"spoofStorage"];
+    [preferences registerBool:&hideBadges default:NO forKey:@"hideBadges"];
+    [preferences registerBool:&hideBetaDots default:NO forKey:@"hideBetaDots"];
+    [preferences registerBool:&hideUpdateDots default:NO forKey:@"hideUpdateDots"];
+    [preferences registerBool:&hideApps default:NO forKey:@"hideApps"];
+    [preferences registerBool:&hideDock default:NO forKey:@"hideDock"];
+    [preferences registerBool:&hideDockBG default:NO forKey:@"hideDockBG"];
+    [preferences registerBool:&hideCloudIcon default:NO forKey:@"hideCloudIcon"];
+    [preferences registerBool:&hideFaceIDLock default:NO forKey:@"hideFaceIDLock"];
+    %init(WaveAway)
+}
