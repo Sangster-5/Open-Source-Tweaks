@@ -42,7 +42,7 @@
 			<key>key</key>
 			<string>hideDockBG</string>
 			<key>label</key>
-			<string>Hide Dock Background (Respring)</string>
+			<string>Hide Dock Background</string>
 		</dict>
 		<dict>
 			<key>PostNotification</key>
@@ -230,7 +230,7 @@
 			<key>label</key>
 			<string>Make Apps Invisible</string>
 		</dict>
-		<!--<dict>
+		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>label</key>
@@ -287,7 +287,7 @@
 			<string>batteryText</string>
 			<key>defaults</key>
 			<string>com.sangster.sbcustomizepreferences</string>
-        </dict>-->
+        </dict>
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
