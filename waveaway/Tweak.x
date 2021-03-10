@@ -71,7 +71,7 @@ static BOOL hideFaceIDLock;*/
     id removeStatusBar = [bundleDefaults valueForKey:@"removeStatusBar"];
     
     if ([removeStatusBar isEqual:@1]) {
-        self.hidden = YES;
+        [self setHidden:YES];
     }
     
     return %orig;
@@ -93,16 +93,10 @@ static BOOL hideFaceIDLock;*/
         if(![self.text containsString:@"%"]) {
             
             [self setText:carrierText];
-            
-        } else {
-            %orig;
         }
-    
     }
     
-    else if([enableCustomCarrier isEqual:@0]) {
-        %orig;
-    }
+    return %orig;
     
     // Change Battery
     
@@ -141,7 +135,7 @@ static BOOL hideFaceIDLock;*/
     id hideNoti = [bundleDefaults valueForKey:@"hideNoti"];
     
     if ([hideNoti isEqual:@1]) {
-        self.hidden = YES;
+        [self setHidden:YES];
     }
     
     return %orig;
