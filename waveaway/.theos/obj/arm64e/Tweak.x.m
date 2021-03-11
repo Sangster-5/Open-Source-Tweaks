@@ -79,7 +79,7 @@ static BOOL enableFolderColour;
 #define _LOGOS_RETURN_RETAINED
 #endif
 
-@class PSCapacityBarCell; @class SBFolderBackgroundView; @class NCNotificationListView; @class NCNotificationListSectionRevealHintView; @class SBIconBadgeView; @class SBFolderTitleTextField; @class SBIconListPageControl; @class _UIStatusBarStringView; @class SBIconCloudLabelAccessoryView; @class SBIconBetaLabelAccessoryView; @class _UIStatusBar; @class SBIconLegibilityLabelView; @class SBIconRecentlyUpdatedLabelAccessoryView; @class SBDockView; @class SBIconImageView; @class BSUICAPackageView; 
+@class SBIconRecentlyUpdatedLabelAccessoryView; @class SBIconLegibilityLabelView; @class SBIconBadgeView; @class _UIStatusBar; @class SBFolderBackgroundView; @class SBIconImageView; @class BSUICAPackageView; @class NCNotificationListSectionRevealHintView; @class _UIStatusBarStringView; @class SBIconBetaLabelAccessoryView; @class SBIconListPageControl; @class SBIconCloudLabelAccessoryView; @class SBFolderTitleTextField; @class PSCapacityBarCell; @class SBDockView; @class NCNotificationListView; 
 
 
 #line 60 "Tweak.x"
@@ -115,13 +115,15 @@ static void _logos_method$WaveAway$_UIStatusBar$didMoveToWindow(_LOGOS_SELF_TYPE
 
 static void _logos_method$WaveAway$_UIStatusBarStringView$layoutSubviews(_LOGOS_SELF_TYPE_NORMAL _UIStatusBarStringView* _LOGOS_SELF_CONST __unused self, SEL __unused _cmd) {
     NSDictionary *bundleDefaults = [[NSUserDefaults standardUserDefaults]persistentDomainForName:@"com.sangster.sbcustomize"];
+    NSString *batteryText = [bundleDefaults valueForKey:@"batteryText"];
+    id enableCustomBatteryText = [bundleDefaults valueForKey:@"enableCustomBatteryText"];
         
     
     NSString *carrierText = [bundleDefaults valueForKey:@"carrierText"];
     id enableCustomCarrier = [bundleDefaults valueForKey:@"enableCustomCarrier"];
         
     if([enableCustomCarrier isEqual:@1] && ![carrierText isEqual:@""]) {
-        if(![self.text containsString:@"%"]) {
+        if(![self.text containsString:@"%"] && ![self.text containsString:batteryText]) {
                 
             [self setText:carrierText];
         }
@@ -129,8 +131,6 @@ static void _logos_method$WaveAway$_UIStatusBarStringView$layoutSubviews(_LOGOS_
     
     _logos_orig$WaveAway$_UIStatusBarStringView$layoutSubviews(self, _cmd);
     
-    NSString *batteryText = [bundleDefaults valueForKey:@"batteryText"];
-    id enableCustomBatteryText = [bundleDefaults valueForKey:@"enableCustomBatteryText"];
     
     if([enableCustomBatteryText isEqual:@1] && ![batteryText isEqual:@""]) {
         if([self.text containsString:@"%"]) {

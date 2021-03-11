@@ -89,13 +89,15 @@ static BOOL enableFolderColour;
 
 -(void)layoutSubviews {
     NSDictionary *bundleDefaults = [[NSUserDefaults standardUserDefaults]persistentDomainForName:@"com.sangster.sbcustomize"];
+    NSString *batteryText = [bundleDefaults valueForKey:@"batteryText"];
+    id enableCustomBatteryText = [bundleDefaults valueForKey:@"enableCustomBatteryText"];
         
     // Change Carrier
     NSString *carrierText = [bundleDefaults valueForKey:@"carrierText"];
     id enableCustomCarrier = [bundleDefaults valueForKey:@"enableCustomCarrier"];
         
     if([enableCustomCarrier isEqual:@1] && ![carrierText isEqual:@""]) {
-        if(![self.text containsString:@"%"]) {
+        if(![self.text containsString:@"%"] && ![self.text containsString:batteryText]) {
                 
             [self setText:carrierText];
         }
@@ -103,9 +105,7 @@ static BOOL enableFolderColour;
     
     %orig;
     
-    NSString *batteryText = [bundleDefaults valueForKey:@"batteryText"];
-    id enableCustomBatteryText = [bundleDefaults valueForKey:@"enableCustomBatteryText"];
-    
+    // Battery Text
     if([enableCustomBatteryText isEqual:@1] && ![batteryText isEqual:@""]) {
         if([self.text containsString:@"%"]) {
                 
