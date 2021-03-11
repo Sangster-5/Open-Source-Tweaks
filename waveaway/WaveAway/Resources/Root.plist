@@ -24,7 +24,7 @@
 			<key>default</key>
             <false/>
 			<key>defaults</key>
-			<string>com.sangster.sbcustomizepreferences</string>
+			<string>com.sangster.sbcustomize</string>
 			<key>key</key>
 			<string>hidePageDots</string>
 			<key>label</key>
@@ -38,7 +38,7 @@
 			<key>default</key>
             <false/>
 			<key>defaults</key>
-			<string>com.sangster.sbcustomizepreferences</string>
+			<string>com.sangster.sbcustomize</string>
 			<key>key</key>
 			<string>hideDockBG</string>
 			<key>label</key>
@@ -52,11 +52,44 @@
 			<key>default</key>
             <false/>
 			<key>defaults</key>
-			<string>com.sangster.sbcustomizepreferences</string>
+			<string>com.sangster.sbcustomize</string>
 			<key>key</key>
 			<string>hideDock</string>
 			<key>label</key>
 			<string>Hide Dock</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSLinkCell</string>
+			<key>cellClass</key>
+			<string>SparkColourPickerCell</string>
+			<key>libsparkcolourpicker</key>
+			<dict>
+				<key>defaults</key>
+				<string>com.sangster.sbcustomize</string>
+				<key>fallback</key>
+				<string>#ffffff</string>
+				<key>alpha</key>
+				<true/>
+			</dict>
+			<key>label</key>
+			<string>Your Dock Colour</string>
+			<key>key</key>
+			<string>dockColour</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.sangster.sbcustomize/ReloadPrefs</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+            <false/>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomize</string>
+			<key>key</key>
+			<string>enabledDockColour</string>
+			<key>label</key>
+			<string>Enabled Custom Dock Colour</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -72,7 +105,7 @@
 			<key>default</key>
             <false/>
 			<key>defaults</key>
-			<string>com.sangster.sbcustomizepreferences</string>
+			<string>com.sangster.sbcustomize</string>
 			<key>key</key>
 			<string>hideNoti</string>
 			<key>label</key>
@@ -86,7 +119,7 @@
 			<key>default</key>
             <false/>
 			<key>defaults</key>
-			<string>com.sangster.sbcustomizepreferences</string>
+			<string>com.sangster.sbcustomize</string>
 			<key>key</key>
 			<string>hideOldNoti</string>
 			<key>label</key>
@@ -100,7 +133,7 @@
 			<key>default</key>
             <false/>
 			<key>defaults</key>
-			<string>com.sangster.sbcustomizepreferences</string>
+			<string>com.sangster.sbcustomize</string>
 			<key>key</key>
 			<string>hideFaceIDLock</string>
 			<key>label</key>
@@ -120,7 +153,7 @@
 			<key>default</key>
             <false/>
 			<key>defaults</key>
-			<string>com.sangster.sbcustomizepreferences</string>
+			<string>com.sangster.sbcustomize</string>
 			<key>key</key>
 			<string>removeStatusBar</string>
 			<key>label</key>
@@ -134,7 +167,7 @@
 			<key>default</key>
             <false/>
 			<key>defaults</key>
-			<string>com.sangster.sbcustomizepreferences</string>
+			<string>com.sangster.sbcustomize</string>
 			<key>key</key>
 			<string>spoofStorage</string>
 			<key>label</key>
@@ -154,7 +187,7 @@
 			<key>default</key>
             <false/>
 			<key>defaults</key>
-			<string>com.sangster.sbcustomizepreferences</string>
+			<string>com.sangster.sbcustomize</string>
 			<key>key</key>
 			<string>removeLabels</string>
 			<key>label</key>
@@ -168,7 +201,7 @@
 			<key>default</key>
             <false/>
 			<key>defaults</key>
-			<string>com.sangster.sbcustomizepreferences</string>
+			<string>com.sangster.sbcustomize</string>
 			<key>key</key>
 			<string>hideBadges</string>
 			<key>label</key>
@@ -182,7 +215,7 @@
 			<key>default</key>
             <false/>
 			<key>defaults</key>
-			<string>com.sangster.sbcustomizepreferences</string>
+			<string>com.sangster.sbcustomize</string>
 			<key>key</key>
 			<string>hideBetaDots</string>
 			<key>label</key>
@@ -196,7 +229,7 @@
 			<key>default</key>
             <false/>
 			<key>defaults</key>
-			<string>com.sangster.sbcustomizepreferences</string>
+			<string>com.sangster.sbcustomize</string>
 			<key>key</key>
 			<string>hideUpdateDots</string>
 			<key>label</key>
@@ -210,7 +243,7 @@
 			<key>default</key>
             <false/>
 			<key>defaults</key>
-			<string>com.sangster.sbcustomizepreferences</string>
+			<string>com.sangster.sbcustomize</string>
 			<key>key</key>
 			<string>hideCloudIcon</string>
 			<key>label</key>
@@ -224,7 +257,7 @@
 			<key>default</key>
             <false/>
 			<key>defaults</key>
-			<string>com.sangster.sbcustomizepreferences</string>
+			<string>com.sangster.sbcustomize</string>
 			<key>key</key>
 			<string>hideApps</string>
 			<key>label</key>
@@ -244,7 +277,7 @@
 			<key>default</key>
             <false/>
 			<key>defaults</key>
-			<string>com.sangster.sbcustomizepreferences</string>
+			<string>com.sangster.sbcustomize</string>
 			<key>key</key>
 			<string>enableCustomCarrier</string>
 			<key>label</key>
