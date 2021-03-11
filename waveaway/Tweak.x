@@ -17,6 +17,7 @@ static BOOL hideDockBG;
 static BOOL hideCloudIcon;
 static BOOL hideFaceIDLock;
 static BOOL enableDockColour;
+static BOOL hideFolderText;
 
 //Interfaces
 
@@ -47,6 +48,10 @@ static BOOL enableDockColour;
 @interface SBIconCloudLabelAccessoryView : UIView
 @end
 @interface BSUICAPackageView : UIView
+@end
+@interface SBFolderTitleTextField : UIView
+@end
+@interface SBFolderBackgroundView : UIView
 @end
 
 // End Interfaces
@@ -269,8 +274,21 @@ static BOOL enableDockColour;
     return  %orig;
 }
 %end
+
+%hook SBFolderTitleTextField
+
+-(void)layoutSubviews {
+    if(hideFolderText) {
+        [self setHidden:YES];
+    }
+    
+    return %orig;
+}
+
 %end
 
+
+%end
 %ctor {
     
     HBPreferences *preferences = [[HBPreferences alloc] initWithIdentifier:@"com.sangster.sbcustomize"];
@@ -290,5 +308,6 @@ static BOOL enableDockColour;
     [preferences registerBool:&hideCloudIcon default:NO forKey:@"hideCloudIcon"];
     [preferences registerBool:&hideFaceIDLock default:NO forKey:@"hideFaceIDLock"];
     [preferences registerBool:&enableDockColour default:NO forKey:@"enableDockColour"];
+    [preferences registerBool:&hideFolderText default:NO forKey:@"hideFolderText"];
     %init(WaveAway)
 }
