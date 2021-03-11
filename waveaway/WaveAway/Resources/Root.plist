@@ -352,7 +352,7 @@
 			<key>defaults</key>
 			<string>com.sangster.sbcustomize</string>
         </dict>
-		<!--<dict>
+		<dict>
 			<key>PostNotification</key>
 			<string>com.sangster.sbcustomize/ReloadPrefs</string>
 			<key>cell</key>
@@ -377,7 +377,7 @@
 			<string>batteryText</string>
 			<key>defaults</key>
 			<string>com.sangster.sbcustomize</string>
-        </dict>-->
+        </dict>
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>

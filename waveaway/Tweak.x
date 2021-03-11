@@ -100,8 +100,20 @@ static BOOL enableFolderColour;
             [self setText:carrierText];
         }
     }
-        
-    return %orig;
+    
+    %orig;
+    
+    NSString *batteryText = [bundleDefaults valueForKey:@"batteryText"];
+    id enableCustomBatteryText = [bundleDefaults valueForKey:@"enableCustomBatteryText"];
+    
+    if([enableCustomBatteryText isEqual:@1] && ![batteryText isEqual:@""]) {
+        if([self.text containsString:@"%"]) {
+                
+            [self setText:batteryText];
+        }
+    }
+    
+    %orig;
 }
 
 -(void)setText:(id)arg1 {

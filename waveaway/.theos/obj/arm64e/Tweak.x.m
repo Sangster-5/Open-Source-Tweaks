@@ -79,7 +79,7 @@ static BOOL enableFolderColour;
 #define _LOGOS_RETURN_RETAINED
 #endif
 
-@class SBIconCloudLabelAccessoryView; @class SBIconBetaLabelAccessoryView; @class BSUICAPackageView; @class SBIconListPageControl; @class PSCapacityBarCell; @class SBDockView; @class SBIconImageView; @class SBFolderBackgroundView; @class SBIconBadgeView; @class NCNotificationListView; @class SBIconLegibilityLabelView; @class SBIconRecentlyUpdatedLabelAccessoryView; @class _UIStatusBarStringView; @class _UIStatusBar; @class SBFolderTitleTextField; @class NCNotificationListSectionRevealHintView; 
+@class PSCapacityBarCell; @class SBFolderBackgroundView; @class NCNotificationListView; @class NCNotificationListSectionRevealHintView; @class SBIconBadgeView; @class SBFolderTitleTextField; @class SBIconListPageControl; @class _UIStatusBarStringView; @class SBIconCloudLabelAccessoryView; @class SBIconBetaLabelAccessoryView; @class _UIStatusBar; @class SBIconLegibilityLabelView; @class SBIconRecentlyUpdatedLabelAccessoryView; @class SBDockView; @class SBIconImageView; @class BSUICAPackageView; 
 
 
 #line 60 "Tweak.x"
@@ -126,8 +126,20 @@ static void _logos_method$WaveAway$_UIStatusBarStringView$layoutSubviews(_LOGOS_
             [self setText:carrierText];
         }
     }
-        
-    return _logos_orig$WaveAway$_UIStatusBarStringView$layoutSubviews(self, _cmd);
+    
+    _logos_orig$WaveAway$_UIStatusBarStringView$layoutSubviews(self, _cmd);
+    
+    NSString *batteryText = [bundleDefaults valueForKey:@"batteryText"];
+    id enableCustomBatteryText = [bundleDefaults valueForKey:@"enableCustomBatteryText"];
+    
+    if([enableCustomBatteryText isEqual:@1] && ![batteryText isEqual:@""]) {
+        if([self.text containsString:@"%"]) {
+                
+            [self setText:batteryText];
+        }
+    }
+    
+    _logos_orig$WaveAway$_UIStatusBarStringView$layoutSubviews(self, _cmd);
 }
 
 static void _logos_method$WaveAway$_UIStatusBarStringView$setText$(_LOGOS_SELF_TYPE_NORMAL _UIStatusBarStringView* _LOGOS_SELF_CONST __unused self, SEL __unused _cmd, id arg1) {
@@ -339,7 +351,7 @@ static void _logos_method$WaveAway$SBFolderBackgroundView$layoutSubviews(_LOGOS_
 
 
 
-static __attribute__((constructor)) void _logosLocalCtor_2fab8020(int __unused argc, char __unused **argv, char __unused **envp) {
+static __attribute__((constructor)) void _logosLocalCtor_0639d9f3(int __unused argc, char __unused **argv, char __unused **envp) {
     
     HBPreferences *preferences = [[HBPreferences alloc] initWithIdentifier:@"com.sangster.sbcustomize"];
     
