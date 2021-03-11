@@ -18,6 +18,7 @@ static BOOL hideCloudIcon;
 static BOOL hideFaceIDLock;
 static BOOL enableDockColour;
 static BOOL hideFolderText;
+static BOOL enableFolderColour;
 
 //Interfaces
 
@@ -287,6 +288,29 @@ static BOOL hideFolderText;
 
 %end
 
+%hook SBFolderBackgroundView
+
+-(void)layoutSubviews {
+    UIView *_blurView = [self valueForKey:@"_blurView"];
+    
+    NSString* folderColour = NULL;
+    NSDictionary* preferencesDictionary = [NSDictionary dictionaryWithContentsOfFile: @"/var/mobile/Library/Preferences/com.sangster.sbcustomize.plist"];
+    if(preferencesDictionary)
+    {
+        folderColour = [preferencesDictionary objectForKey: @"folderColour"];
+    }
+    
+    UIColor* selectedFolderColour = [SparkColourPickerUtils colourWithString: folderColour withFallback: @"#ffffff"];
+    
+    if(enableFolderColour) {
+        _blurView.backgroundColor = selectedFolderColour;
+    }
+    
+    return %orig;
+}
+
+%end
+
 
 %end
 %ctor {
@@ -309,5 +333,6 @@ static BOOL hideFolderText;
     [preferences registerBool:&hideFaceIDLock default:NO forKey:@"hideFaceIDLock"];
     [preferences registerBool:&enableDockColour default:NO forKey:@"enableDockColour"];
     [preferences registerBool:&hideFolderText default:NO forKey:@"hideFolderText"];
+    [preferences registerBool:&enableFolderColour default:NO forKey:@"enableFolderColour"];
     %init(WaveAway)
 }

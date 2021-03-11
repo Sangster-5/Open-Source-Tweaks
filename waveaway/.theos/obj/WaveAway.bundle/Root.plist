@@ -105,7 +105,40 @@
 			<key>key</key>
 			<string>hideFolderText</string>
 			<key>label</key>
-			<string>Hide inner Folder Name</string>
+			<string>Hide Inner Folder Name</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSLinkCell</string>
+			<key>cellClass</key>
+			<string>SparkColourPickerCell</string>
+			<key>libsparkcolourpicker</key>
+			<dict>
+				<key>defaults</key>
+				<string>com.sangster.sbcustomize</string>
+				<key>fallback</key>
+				<string>#ffffff</string>
+				<key>alpha</key>
+				<true/>
+			</dict>
+			<key>label</key>
+			<string>Your Folder Colour</string>
+			<key>key</key>
+			<string>folderColour</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.sangster.sbcustomize/ReloadPrefs</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+            <false/>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomize</string>
+			<key>key</key>
+			<string>enableFolderColour</string>
+			<key>label</key>
+			<string>Enable Folder Background Colour</string>
 		</dict>
 
 		<!-- Lock Screen -->
