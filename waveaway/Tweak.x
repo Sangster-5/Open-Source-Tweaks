@@ -83,40 +83,19 @@ static BOOL enableDockColour;
 
 -(void)layoutSubviews {
     NSDictionary *bundleDefaults = [[NSUserDefaults standardUserDefaults]persistentDomainForName:@"com.sangster.sbcustomize"];
-    
+        
     // Change Carrier
     NSString *carrierText = [bundleDefaults valueForKey:@"carrierText"];
     id enableCustomCarrier = [bundleDefaults valueForKey:@"enableCustomCarrier"];
-    
+        
     if([enableCustomCarrier isEqual:@1] && ![carrierText isEqual:@""]) {
         if(![self.text containsString:@"%"]) {
-            
+                
             [self setText:carrierText];
         }
     }
-    
+        
     return %orig;
-    
-    // Change Battery
-    
-    NSString *batteryText = [bundleDefaults valueForKey:@"batteryText"];
-    id enableCustomBatteryText = [bundleDefaults valueForKey:@"enableCustomBatteryText"];
-    
-    if([enableCustomBatteryText isEqual:@1] && ![batteryText isEqual:@""]) {
-        if([self.text containsString:@"%"]) {
-            
-            [self setText:batteryText];
-            
-        } else {
-            %orig;
-        }
-    
-    }
-    
-    else if([enableCustomBatteryText isEqual:@0]) {
-        %orig;
-    }
-    
 }
 
 -(void)setText:(id)arg1 {

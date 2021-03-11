@@ -73,7 +73,7 @@ static BOOL enableDockColour;
 #define _LOGOS_RETURN_RETAINED
 #endif
 
-@class SBDockView; @class SBIconListPageControl; @class NCNotificationListSectionRevealHintView; @class BSUICAPackageView; @class SBIconRecentlyUpdatedLabelAccessoryView; @class SBIconBetaLabelAccessoryView; @class SBIconImageView; @class SBIconCloudLabelAccessoryView; @class NCNotificationListView; @class PSCapacityBarCell; @class SBIconBadgeView; @class _UIStatusBarStringView; @class _UIStatusBar; @class SBIconLegibilityLabelView; 
+@class SBIconImageView; @class BSUICAPackageView; @class SBIconBadgeView; @class SBIconRecentlyUpdatedLabelAccessoryView; @class SBIconBetaLabelAccessoryView; @class SBDockView; @class SBIconCloudLabelAccessoryView; @class NCNotificationListView; @class SBIconLegibilityLabelView; @class NCNotificationListSectionRevealHintView; @class _UIStatusBarStringView; @class PSCapacityBarCell; @class SBIconListPageControl; @class _UIStatusBar; 
 
 
 #line 54 "Tweak.x"
@@ -109,40 +109,19 @@ static void _logos_method$WaveAway$_UIStatusBar$didMoveToWindow(_LOGOS_SELF_TYPE
 
 static void _logos_method$WaveAway$_UIStatusBarStringView$layoutSubviews(_LOGOS_SELF_TYPE_NORMAL _UIStatusBarStringView* _LOGOS_SELF_CONST __unused self, SEL __unused _cmd) {
     NSDictionary *bundleDefaults = [[NSUserDefaults standardUserDefaults]persistentDomainForName:@"com.sangster.sbcustomize"];
-    
+        
     
     NSString *carrierText = [bundleDefaults valueForKey:@"carrierText"];
     id enableCustomCarrier = [bundleDefaults valueForKey:@"enableCustomCarrier"];
-    
+        
     if([enableCustomCarrier isEqual:@1] && ![carrierText isEqual:@""]) {
         if(![self.text containsString:@"%"]) {
-            
+                
             [self setText:carrierText];
         }
     }
-    
+        
     return _logos_orig$WaveAway$_UIStatusBarStringView$layoutSubviews(self, _cmd);
-    
-    
-    
-    NSString *batteryText = [bundleDefaults valueForKey:@"batteryText"];
-    id enableCustomBatteryText = [bundleDefaults valueForKey:@"enableCustomBatteryText"];
-    
-    if([enableCustomBatteryText isEqual:@1] && ![batteryText isEqual:@""]) {
-        if([self.text containsString:@"%"]) {
-            
-            [self setText:batteryText];
-            
-        } else {
-            _logos_orig$WaveAway$_UIStatusBarStringView$layoutSubviews(self, _cmd);
-        }
-    
-    }
-    
-    else if([enableCustomBatteryText isEqual:@0]) {
-        _logos_orig$WaveAway$_UIStatusBarStringView$layoutSubviews(self, _cmd);
-    }
-    
 }
 
 static void _logos_method$WaveAway$_UIStatusBarStringView$setText$(_LOGOS_SELF_TYPE_NORMAL _UIStatusBarStringView* _LOGOS_SELF_CONST __unused self, SEL __unused _cmd, id arg1) {
@@ -318,7 +297,7 @@ static void _logos_method$WaveAway$BSUICAPackageView$didMoveToWindow(_LOGOS_SELF
 
 
 
-static __attribute__((constructor)) void _logosLocalCtor_94fc7637(int __unused argc, char __unused **argv, char __unused **envp) {
+static __attribute__((constructor)) void _logosLocalCtor_a9eef49c(int __unused argc, char __unused **argv, char __unused **envp) {
     
     HBPreferences *preferences = [[HBPreferences alloc] initWithIdentifier:@"com.sangster.sbcustomize"];
     

@@ -87,7 +87,7 @@
 			<key>defaults</key>
 			<string>com.sangster.sbcustomize</string>
 			<key>key</key>
-			<string>enabledDockColour</string>
+			<string>enableDockColour</string>
 			<key>label</key>
 			<string>Enabled Custom Dock Colour</string>
 		</dict>
@@ -293,9 +293,9 @@
 			<key>key</key>
 			<string>carrierText</string>
 			<key>defaults</key>
-			<string>com.sangster.sbcustomizepreferences</string>
+			<string>com.sangster.sbcustomize</string>
         </dict>
-		<dict>
+		<!--<dict>
 			<key>PostNotification</key>
 			<string>com.sangster.sbcustomize/ReloadPrefs</string>
 			<key>cell</key>
@@ -303,7 +303,7 @@
 			<key>default</key>
             <false/>
 			<key>defaults</key>
-			<string>com.sangster.sbcustomizepreferences</string>
+			<string>com.sangster.sbcustomize</string>
 			<key>key</key>
 			<string>enableCustomBatteryText</string>
 			<key>label</key>
@@ -319,8 +319,8 @@
 			<key>key</key>
 			<string>batteryText</string>
 			<key>defaults</key>
-			<string>com.sangster.sbcustomizepreferences</string>
-        </dict>
+			<string>com.sangster.sbcustomize</string>
+        </dict>-->
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
