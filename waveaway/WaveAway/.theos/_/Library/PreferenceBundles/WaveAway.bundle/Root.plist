@@ -140,6 +140,20 @@
 			<key>label</key>
 			<string>Enable Folder Background Colour</string>
 		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.sangster.sbcustomize/ReloadPrefs</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+            <false/>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomize</string>
+			<key>key</key>
+			<string>hideFolderBackground</string>
+			<key>label</key>
+			<string>Hide Folder Background</string>
+		</dict>
 
 		<!-- Lock Screen -->
 		<dict>

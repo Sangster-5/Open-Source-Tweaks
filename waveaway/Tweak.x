@@ -19,6 +19,7 @@ static BOOL hideFaceIDLock;
 static BOOL enableDockColour;
 static BOOL hideFolderText;
 static BOOL enableFolderColour;
+static BOOL hideFolderBackground;
 
 //Interfaces
 
@@ -320,6 +321,10 @@ static BOOL enableFolderColour;
         _blurView.backgroundColor = selectedFolderColour;
     }
     
+    if(hideFolderBackground) {
+        [_blurView setHidden:YES];
+    }
+    
     return %orig;
 }
 
@@ -330,6 +335,7 @@ static BOOL enableFolderColour;
     
     HBPreferences *preferences = [[HBPreferences alloc] initWithIdentifier:@"com.sangster.sbcustomize"];
     
+    [preferences registerBool:&hideFolderBackground default:NO forKey:@"hideFolderBackground"];
     [preferences registerBool:&removeLabels default:NO forKey:@"removeLabels"];
     [preferences registerBool:&removeStatusBar default:NO forKey:@"removeStatusBar"];
     [preferences registerBool:&hideOldNoti default:NO forKey:@"hideOldNoti"];

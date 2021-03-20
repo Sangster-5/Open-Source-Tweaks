@@ -6,5 +6,5 @@ Maintainer: Sangster5
 Author: Sangster5
 Section: Tweaks
 Depends: mobilesubstrate (>= 0.9.5000), preferenceloader, ws.hbang.common (>= 1.14), com.spark.libsparkcolourpicker
-Version: 0.9.4
+Version: 0.9.5
 Installed-Size: 928
