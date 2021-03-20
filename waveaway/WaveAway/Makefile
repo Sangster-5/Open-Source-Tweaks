@@ -1,5 +1,3 @@
-TARGET := iphone:clang:latest:13.5
-
 include $(THEOS)/makefiles/common.mk
 
 BUNDLE_NAME = WaveAway

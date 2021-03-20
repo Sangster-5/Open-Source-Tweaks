@@ -54,6 +54,8 @@ static BOOL enableFolderColour;
 @end
 @interface SBFolderBackgroundView : UIView
 @end
+@interface _UINavigationBarLargeTitleView : UIView
+@end
 
 // End Interfaces
 
@@ -258,7 +260,7 @@ static BOOL enableFolderColour;
         _backgroundView.backgroundColor = selectedDockColour;
     }
     
-    return %orig;
+    %orig;
 }
 
 %end
@@ -322,7 +324,6 @@ static BOOL enableFolderColour;
 }
 
 %end
-
 
 %end
 %ctor {
