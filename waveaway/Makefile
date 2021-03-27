@@ -11,10 +11,9 @@ WaveAway_FILES = Tweak.x
 WaveAway_CFLAGS = -fobjc-arc
 WaveAway_EXTRA_FRAMEWORKS += Cephei
 
-SUBPROJECTS += WaveAway
-
 export WaveAway_LIBRARIES = sparkcolourpicker
 
+SUBPROJECTS += WaveAway
 
 include $(THEOS_MAKE_PATH)/tweak.mk
 include $(THEOS_MAKE_PATH)/aggregate.mk
