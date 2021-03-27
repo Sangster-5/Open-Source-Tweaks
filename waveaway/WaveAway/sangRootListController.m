@@ -35,7 +35,7 @@ UIVisualEffectView* blurView;
                                     style:UIBarButtonItemStylePlain
                                     target:self
                                     action:@selector(respring)];
-        //self.killButton.tintColor = [UIColor blueColor];
+        self.killButton.tintColor = [UIColor colorWithRed: 0.05 green: 0.83 blue: 0.95 alpha: 1.00];
         self.navigationItem.rightBarButtonItem = self.killButton;
         self.navigationItem.titleView = [UIView new];
         self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
@@ -128,7 +128,6 @@ UIVisualEffectView* blurView;
     self.navigationController.navigationController.navigationBar.barTintColor = [UIColor clearColor];
     [self.navigationController.navigationController.navigationBar setShadowImage: [UIImage new]];
     self.navigationController.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    self.navigationController.navigationController.navigationBar.translucent = NO;
 
 }
  
@@ -173,7 +172,7 @@ UIVisualEffectView* blurView;
 
 - (UIColor *)tintColor {
 
-    return [UIColor systemBlueColor];
+    return [UIColor colorWithRed: 0.05 green: 0.83 blue: 0.95 alpha: 1.00];
 
 }
 

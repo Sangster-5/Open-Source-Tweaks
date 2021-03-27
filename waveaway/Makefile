@@ -1,10 +1,9 @@
 export PREFIX=$(THEOS)/toolchain/Xcode.xctoolchain/usr/bin/
-
 export ARCHS = arm64 arm64e
 
-INSTALL_TARGET_PROCESSES = SpringBoard
-
 FINALPACKAGE = 1
+
+THEOS_DEVICE_IP = 192.168.0.12
 
 include $(THEOS)/makefiles/common.mk
 
@@ -12,9 +11,10 @@ TWEAK_NAME = WaveAway
 
 WaveAway_FILES = Tweak.x
 WaveAway_CFLAGS = -fobjc-arc
+WaveAway_EXTRA_FRAMEWORKS += Cephei
 
 SUBPROJECTS += WaveAway
-WaveAway_EXTRA_FRAMEWORKS += Cephei
+
 export WaveAway_LIBRARIES = sparkcolourpicker
 
 
