@@ -89,38 +89,19 @@ static BOOL hideFolderBackground;
 
 //Changes Statusbar text
 %hook _UIStatusBarStringView
-
 -(void)layoutSubviews {
     NSDictionary *bundleDefaults = [[NSUserDefaults standardUserDefaults]persistentDomainForName:@"com.sangster.sbcustomize"];
     NSString *batteryText = [bundleDefaults valueForKey:@"batteryText"];
     id enableCustomBatteryText = [bundleDefaults valueForKey:@"enableCustomBatteryText"];
-        
-    // Change Carrier
+    
     NSString *carrierText = [bundleDefaults valueForKey:@"carrierText"];
     id enableCustomCarrier = [bundleDefaults valueForKey:@"enableCustomCarrier"];
         
-        if([enableCustomCarrierText isEqual:@1] && (!batteryText || ![self.text containsString:batteryText] || ![self.text containsString:@"%"]))
-                
-            [self setText:carrierText];
-        }
-    }
-    
-    %orig;
-    
-    // Battery Text
-        if([enableCustomBatteryText isEqual:@1] && (batteryText || ![self.text containsString:batteryText] || [self.text containsString:@"%"])) {
-            
-            [self setText:batteryText];
-        }
-    }
+    if([enableCustomCarrierText isEqual:@1] && ![self.text containsString:@"%"] && (!batteryText || ![self.text containsString:batteryText])) [self setText:carrierText];
+    else if([enableCustomBatteryText isEqual:@1] && [self.text containsString:@"%"] && (!carrierText || ![self.text containsString:carrierText])) [self setText:batteryText];
     
     %orig;
 }
-
--(void)setText:(id)arg1 {
-    %orig;
-}
-
 %end
 
 //Hides Notifications // Done
