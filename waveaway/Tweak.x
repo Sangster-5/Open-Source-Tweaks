@@ -99,8 +99,7 @@ static BOOL hideFolderBackground;
     NSString *carrierText = [bundleDefaults valueForKey:@"carrierText"];
     id enableCustomCarrier = [bundleDefaults valueForKey:@"enableCustomCarrier"];
         
-    if([enableCustomCarrier isEqual:@1] && ![carrierText isEqual:@""]) {
-        if(![self.text containsString:@"%"] && ![self.text containsString:batteryText]) {
+        if([enableCustomCarrierText isEqual:@1] && ![self.text containsString:@"%"] && (!carrierText || ![self.text containsString:batteryText]))
                 
             [self setText:carrierText];
         }
@@ -109,9 +108,8 @@ static BOOL hideFolderBackground;
     %orig;
     
     // Battery Text
-    if([enableCustomBatteryText isEqual:@1] && ![batteryText isEqual:@""]) {
-        if([self.text containsString:@"%"]) {
-                
+        if([enableCustomBatteryText isEqual:@1] && [self.text containsString:@"%"] && (!batteryText || ![self.text containsString:batteryText])) {
+            
             [self setText:batteryText];
         }
     }
