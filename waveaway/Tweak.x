@@ -153,7 +153,7 @@ static BOOL hideFolderBackground;
 // Hide Page Dots
 %hook SBIconListPageControl
 
--(void)layoutSubviews {
+-(void)didMoveToWindow {
     if (hidePageDots) {
         [self setHidden:YES];
     }
@@ -267,7 +267,7 @@ static BOOL hideFolderBackground;
 // Remove Cloud Icon
 %hook SBIconCloudLabelAccessoryView
 
--(void)layoutSubviews {
+-(void)didMoveToWindow {
     if(hideCloudIcon) {
         [self setHidden:YES];
     }
