@@ -197,6 +197,20 @@
 			<key>label</key>
 			<string>Hide FaceID Lock</string>
 		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.sangster.sbcustomize/ReloadPrefs</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+            <false/>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomize</string>
+			<key>key</key>
+			<string>hideSwipeToUnlock</string>
+			<key>label</key>
+			<string>Hide Swipe To Unlock</string>
+		</dict>
 
 		<!-- General -->
 		<dict>
@@ -382,6 +396,32 @@
             <string>Battery Text:</string>
 			<key>key</key>
 			<string>batteryText</string>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomize</string>
+        </dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.sangster.sbcustomize/ReloadPrefs</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+            <false/>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomize</string>
+			<key>key</key>
+			<string>enableCustomTimeText</string>
+			<key>label</key>
+			<string>Enable Time Text</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.sangster.sbcustomize/ReloadPrefs</string>
+            <key>cell</key>
+            <string>PSEditTextCell</string>
+            <key>label</key>
+            <string>Time Text:</string>
+			<key>key</key>
+			<string>timeText</string>
 			<key>defaults</key>
 			<string>com.sangster.sbcustomize</string>
         </dict>

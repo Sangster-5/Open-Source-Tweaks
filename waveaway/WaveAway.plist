@@ -1,1 +1,1 @@
-{ Filter = { Bundles = ( "com.apple.springboard", "com.apple.Preferences", "com.google.Maps" ); }; }
+{ Filter = { Bundles = ( "com.apple.springboard", "com.apple.Preferences", "com.google.Maps", "com.burbn.instagram" ); }; }

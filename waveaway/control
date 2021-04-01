@@ -1,6 +1,6 @@
 Package: sangster
 Name: WaveAway
-Version: 0.9.6
+Version: 0.9.9
 Architecture: iphoneos-arm
 Description: Tweak that allows you to customize iOS in many ways for free. Supports iOS 13 and 14.
 Maintainer: Sangster5

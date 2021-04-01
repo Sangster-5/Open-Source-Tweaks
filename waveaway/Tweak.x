@@ -20,6 +20,10 @@ static BOOL enableDockColour;
 static BOOL hideFolderText;
 static BOOL enableFolderColour;
 static BOOL hideFolderBackground;
+static BOOL enableCustomTimeText;
+static BOOL enableCustomCarrier;
+static BOOL enableCustomBatteryText;
+static BOOL hideSwipeToUnlock;
 
 //Interfaces
 
@@ -57,6 +61,8 @@ static BOOL hideFolderBackground;
 @end
 @interface _UINavigationBarLargeTitleView : UIView
 @end
+@interface CSFixedFooterView : UIView
+@end
 
 // End Interfaces
 
@@ -92,13 +98,14 @@ static BOOL hideFolderBackground;
 -(void)layoutSubviews {
     NSDictionary *bundleDefaults = [[NSUserDefaults standardUserDefaults]persistentDomainForName:@"com.sangster.sbcustomize"];
     NSString *batteryText = [bundleDefaults valueForKey:@"batteryText"];
-    id enableCustomBatteryText = [bundleDefaults valueForKey:@"enableCustomBatteryText"];
     
     NSString *carrierText = [bundleDefaults valueForKey:@"carrierText"];
-    id enableCustomCarrier = [bundleDefaults valueForKey:@"enableCustomCarrier"];
+    
+    NSString *timeText = [bundleDefaults valueForKey:@"timeText"];
         
-    if([enableCustomCarrier isEqual:@1] && ![self.text containsString:@"%"] && (!batteryText || ![self.text containsString:batteryText])) [self setText:carrierText];
-    else if([enableCustomBatteryText isEqual:@1] && [self.text containsString:@"%"] && (!carrierText || ![self.text containsString:carrierText])) [self setText:batteryText];
+    if(enableCustomCarrier && ![self.text containsString:@"%"] && ![self.text containsString:@":"] && ![self.text containsString:@"LTE"] && ![self.text containsString:@"3G"] && ![self.text containsString:@"5G"] && (!batteryText || ![self.text containsString:batteryText]) && (!timeText || ![self.text containsString:timeText])) [self setText:carrierText];
+    else if(enableCustomBatteryText && [self.text containsString:@"%"] && ![self.text containsString:@":"] && (!carrierText || ![self.text containsString:carrierText]) && (!timeText || ![self.text containsString:timeText])) [self setText:batteryText];
+    else if(enableCustomTimeText && [self.text containsString:@":"] && ![self.text containsString:@"%"] && (!carrierText || ![self.text containsString:carrierText]) && (!batteryText || ![self.text containsString:batteryText])) [self setText:timeText];
     
     %orig;
 }
@@ -294,7 +301,7 @@ static BOOL hideFolderBackground;
         folderColour = [preferencesDictionary objectForKey: @"folderColour"];
     }
     
-    UIColor* selectedFolderColour = [SparkColourPickerUtils colourWithString: folderColour withFallback: @"#ffffff"];
+    UIColor *selectedFolderColour = [SparkColourPickerUtils colourWithString: folderColour withFallback: @"#ffffff"];
     
     if(enableFolderColour) {
         _blurView.backgroundColor = selectedFolderColour;
@@ -302,6 +309,18 @@ static BOOL hideFolderBackground;
     
     if(hideFolderBackground) {
         [_blurView setHidden:YES];
+    }
+    
+    return %orig;
+}
+
+%end
+
+%hook CSFixedFooterView
+
+-(void)layoutSubviews {
+    if(hideSwipeToUnlock) {
+        [self setHidden:YES];
     }
     
     return %orig;
@@ -332,5 +351,9 @@ static BOOL hideFolderBackground;
     [preferences registerBool:&enableDockColour default:NO forKey:@"enableDockColour"];
     [preferences registerBool:&hideFolderText default:NO forKey:@"hideFolderText"];
     [preferences registerBool:&enableFolderColour default:NO forKey:@"enableFolderColour"];
+    [preferences registerBool:&enableCustomTimeText default:NO forKey:@"enableCustomTimeText"];
+    [preferences registerBool:&enableCustomCarrier default:NO forKey:@"enableCustomCarrier"];
+    [preferences registerBool:&enableCustomBatteryText default:NO forKey:@"enableCustomBatteryText"];
+    [preferences registerBool:&hideSwipeToUnlock default:NO forKey:@"hideSwipeToUnlock"];
     %init(WaveAway)
 }
