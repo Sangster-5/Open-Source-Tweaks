@@ -24,11 +24,12 @@ static BOOL enableCustomTimeText;
 static BOOL enableCustomCarrier;
 static BOOL enableCustomBatteryText;
 static BOOL hideSwipeToUnlock;
+static BOOL hideFolderIconBackground;
+static BOOL hideLSShortCuts;
+static BOOL squareApps;
 
 //Interfaces
 
-@interface SBIconLegibilityLabelView : UIView
-@end
 @interface _UIStatusBar : UIView
 @end
 @interface _UIStatusBarStringView : UILabel
@@ -48,6 +49,7 @@ static BOOL hideSwipeToUnlock;
 @interface SBIconRecentlyUpdatedLabelAccessoryView : UIView
 @end
 @interface SBIconImageView : UIView
+-(void)setShowsSquareCorners;
 @end
 @interface SBDockView : UIView
 @end
@@ -63,21 +65,25 @@ static BOOL hideSwipeToUnlock;
 @end
 @interface CSFixedFooterView : UIView
 @end
+@interface SBFolderIconImageView : UIView
+@end
+@interface CSQuickActionsButton : UIView
+@end
+@interface SBIconView : UIView
+-(void)setLabelHidden;
+@end
 
 // End Interfaces
 
 %group WaveAway
 
-//Hides Icon Labels
-%hook SBIconLegibilityLabelView
--(void)layoutSubviews {
-    if (removeLabels) {
-        [self removeFromSuperview];
-        
-    }
-    
-    return %orig;
+%hook SBIconView
+-(void)setLabelHidden:(BOOL)arg1 {
+    %orig;
+    if(removeLabels)
+        %orig(YES);
 }
+
 %end
 
 // Hides  statusbar // Done
@@ -151,10 +157,9 @@ static BOOL hideSwipeToUnlock;
 }
 %end
 
-//Spoofs Storage
 %hook PSCapacityBarCell
-
 -(void)layoutSubviews {
+    //Spoofs Storage
     UILabel *_sizeLabel = [self valueForKey:@"_sizeLabel"];
     
     if (spoofStorage) {
@@ -166,10 +171,9 @@ static BOOL hideSwipeToUnlock;
 }
 %end
 
-// Removes App Badges
 %hook SBIconBadgeView
-
 -(void)layoutSubviews {
+    // Removes App Badges
     if (hideBadges) {
         [self setHidden:YES];
     }
@@ -179,10 +183,9 @@ static BOOL hideSwipeToUnlock;
 
 %end
 
-// Hides Beta Dots
 %hook SBIconBetaLabelAccessoryView
-
 -(void)layoutSubviews {
+    // Hides Beta Dots
     if (hideBetaDots) {
         [self setHidden:YES];
     }
@@ -192,10 +195,10 @@ static BOOL hideSwipeToUnlock;
 
 %end
 
-// Hides Update Dots
 %hook SBIconRecentlyUpdatedLabelAccessoryView
 
 -(void)layoutSubviews {
+    // Hides Update Dots
     if (hideUpdateDots) {
         [self setHidden:YES];
     }
@@ -205,10 +208,19 @@ static BOOL hideSwipeToUnlock;
 
 %end
 
-// Hide Apps they are just invisible
+
 %hook SBIconImageView
 
+// Square Apps
+-(void)setShowsSquareCorners:(BOOL)arg1 {
+    %orig;
+    if(squareApps)
+        %orig(YES);
+}
+
 -(void)layoutSubviews {
+    
+    // Hide Apps (they are just invisible)
     if(hideApps) {
         [self setHidden:YES];
     }
@@ -252,10 +264,10 @@ static BOOL hideSwipeToUnlock;
 
 %end
 
-// Remove Cloud Icon
 %hook SBIconCloudLabelAccessoryView
 
 -(void)didMoveToWindow {
+    // Remove Cloud Icon
     if(hideCloudIcon) {
         [self setHidden:YES];
     }
@@ -265,10 +277,10 @@ static BOOL hideSwipeToUnlock;
 
 %end
 
-// Removes Face ID Lock // Done
 %hook BSUICAPackageView
 
 -(void)didMoveToWindow {
+    // Hides Face ID Lock
     if(hideFaceIDLock) {
         [self setHidden:YES];
     }
@@ -277,9 +289,12 @@ static BOOL hideSwipeToUnlock;
 }
 %end
 
+
 %hook SBFolderTitleTextField
 
 -(void)layoutSubviews {
+    
+    //Hide Inner Folder text
     if(hideFolderText) {
         [self setHidden:YES];
     }
@@ -294,7 +309,8 @@ static BOOL hideSwipeToUnlock;
 -(void)layoutSubviews {
     UIView *_blurView = [self valueForKey:@"_blurView"];
     
-    NSString* folderColour = NULL;
+    // Colour Folder Background
+    NSString *folderColour = NULL;
     NSDictionary* preferencesDictionary = [NSDictionary dictionaryWithContentsOfFile: @"/var/mobile/Library/Preferences/com.sangster.sbcustomize.plist"];
     if(preferencesDictionary)
     {
@@ -307,8 +323,39 @@ static BOOL hideSwipeToUnlock;
         _blurView.backgroundColor = selectedFolderColour;
     }
     
+    // Hide Folder Background
     if(hideFolderBackground) {
         [_blurView setHidden:YES];
+    }
+    
+    return %orig;
+}
+
+%end
+
+%hook SBFolderIconImageView
+
+-(void)layoutSubviews {
+    
+    UIView *_backgroundView = [self valueForKey:@"_backgroundView"];
+    
+    //Colours Folder Icon Background
+    NSString *folderColour = NULL;
+    NSDictionary* preferencesDictionary = [NSDictionary dictionaryWithContentsOfFile: @"/var/mobile/Library/Preferences/com.sangster.sbcustomize.plist"];
+    if(preferencesDictionary)
+    {
+        folderColour = [preferencesDictionary objectForKey: @"folderColour"];
+    }
+    
+    UIColor *selectedFolderColour = [SparkColourPickerUtils colourWithString: folderColour withFallback: @"#ffffff"];
+    
+    if(enableFolderColour) {
+        _backgroundView.backgroundColor = selectedFolderColour;
+    }
+    
+    // Hide Folder Icon Background
+    if(hideFolderIconBackground) {
+        [_backgroundView setHidden:YES];
     }
     
     return %orig;
@@ -319,7 +366,20 @@ static BOOL hideSwipeToUnlock;
 %hook CSFixedFooterView
 
 -(void)layoutSubviews {
+    //Hides Swipe To Unlock Text
     if(hideSwipeToUnlock) {
+        [self setHidden:YES];
+    }
+    
+    return %orig;
+}
+
+%end
+
+%hook CSQuickActionsButton
+
+-(void)layoutSubviews {
+    if(hideLSShortCuts) {
         [self setHidden:YES];
     }
     
@@ -355,5 +415,8 @@ static BOOL hideSwipeToUnlock;
     [preferences registerBool:&enableCustomCarrier default:NO forKey:@"enableCustomCarrier"];
     [preferences registerBool:&enableCustomBatteryText default:NO forKey:@"enableCustomBatteryText"];
     [preferences registerBool:&hideSwipeToUnlock default:NO forKey:@"hideSwipeToUnlock"];
+    [preferences registerBool:&hideFolderIconBackground default:NO forKey:@"hideFolderIconBackground"];
+    [preferences registerBool:&hideLSShortCuts default:NO forKey:@"hideLSShortCuts"];
+    [preferences registerBool:&squareApps default:NO forKey:@"squareApps"];
     %init(WaveAway)
 }

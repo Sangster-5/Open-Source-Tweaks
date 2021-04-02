@@ -147,6 +147,20 @@
 			<key>label</key>
 			<string>Hide Folder Background</string>
 		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.sangster.sbcustomize/ReloadPrefs</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+            <false/>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomize</string>
+			<key>key</key>
+			<string>hideFolderIconBackground</string>
+			<key>label</key>
+			<string>Hide Folder Icon Background</string>
+		</dict>
 
 		<!-- Lock Screen -->
 		<dict>
@@ -210,6 +224,20 @@
 			<string>hideSwipeToUnlock</string>
 			<key>label</key>
 			<string>Hide Swipe To Unlock</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.sangster.sbcustomize/ReloadPrefs</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+            <false/>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomize</string>
+			<key>key</key>
+			<string>hideLSShortCuts</string>
+			<key>label</key>
+			<string>Hide Lockscreen Shortcuts</string>
 		</dict>
 
 		<!-- General -->
@@ -338,6 +366,20 @@
 			<string>hideApps</string>
 			<key>label</key>
 			<string>Make Apps Invisible</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.sangster.sbcustomize/ReloadPrefs</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+            <false/>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomize</string>
+			<key>key</key>
+			<string>squareApps</string>
+			<key>label</key>
+			<string>Make Apps Square</string>
 		</dict>
 
 		<!-- Custom Status Bar-->
