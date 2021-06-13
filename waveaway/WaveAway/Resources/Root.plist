@@ -275,6 +275,18 @@
 			<key>label</key>
 			<string>Spoof Storage</string>
 		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.sangster.sbcustomize/ReloadPrefs</string>
+            <key>cell</key>
+            <string>PSEditTextCell</string>
+            <key>label</key>
+            <string>Screen Time:</string>
+			<key>key</key>
+			<string>spoofScreenTime</string>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomize</string>
+        </dict>
 
 		<!-- Icons -->
 		<dict>
@@ -464,6 +476,32 @@
             <string>Time Text:</string>
 			<key>key</key>
 			<string>timeText</string>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomize</string>
+        </dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.sangster.sbcustomize/ReloadPrefs</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+            <false/>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomize</string>
+			<key>key</key>
+			<string>enableCustomCarrierStatusText</string>
+			<key>label</key>
+			<string>Enable Carrier Status Text</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.sangster.sbcustomize/ReloadPrefs</string>
+            <key>cell</key>
+            <string>PSEditTextCell</string>
+            <key>label</key>
+            <string>Carrier Status Text:</string>
+			<key>key</key>
+			<string>carrierStatusText</string>
 			<key>defaults</key>
 			<string>com.sangster.sbcustomize</string>
         </dict>

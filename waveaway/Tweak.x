@@ -23,6 +23,7 @@ static BOOL hideFolderBackground;
 static BOOL enableCustomTimeText;
 static BOOL enableCustomCarrier;
 static BOOL enableCustomBatteryText;
+static BOOL enableCustomCarrierStatusText;
 static BOOL hideSwipeToUnlock;
 static BOOL hideFolderIconBackground;
 static BOOL hideLSShortCuts;
@@ -108,10 +109,16 @@ static BOOL squareApps;
     NSString *carrierText = [bundleDefaults valueForKey:@"carrierText"];
     
     NSString *timeText = [bundleDefaults valueForKey:@"timeText"];
+    
+    NSString *carrierStatusText = [bundleDefaults valueForKey:@"carrierStatusText"];
         
-    if(enableCustomCarrier && ![self.text containsString:@"%"] && ![self.text containsString:@":"] && ![self.text containsString:@"LTE"] && ![self.text containsString:@"3G"] && ![self.text containsString:@"5G"] && (!batteryText || ![self.text containsString:batteryText]) && (!timeText || ![self.text containsString:timeText])) [self setText:carrierText];
-    else if(enableCustomBatteryText && [self.text containsString:@"%"] && ![self.text containsString:@":"] && (!carrierText || ![self.text containsString:carrierText]) && (!timeText || ![self.text containsString:timeText])) [self setText:batteryText];
-    else if(enableCustomTimeText && [self.text containsString:@":"] && ![self.text containsString:@"%"] && (!carrierText || ![self.text containsString:carrierText]) && (!batteryText || ![self.text containsString:batteryText])) [self setText:timeText];
+    if(enableCustomCarrier && ![self.text containsString:@"%"] && ![self.text containsString:@":"] && ![self.text containsString:@"LTE"] && ![self.text containsString:@"3G"] && ![self.text containsString:@"5G"] && ![self.text containsString:@"4G"] && (!batteryText || ![self.text containsString:batteryText]) && (!timeText || ![self.text containsString:timeText]) && (!carrierStatusText || ![self.text containsString:carrierStatusText])) [self setText:carrierText];
+    
+    else if(enableCustomBatteryText && [self.text containsString:@"%"] && ![self.text containsString:@":"] && (!carrierText || ![self.text containsString:carrierText]) && (!timeText || ![self.text containsString:timeText]) && (!carrierStatusText || ![self.text containsString:carrierStatusText])) [self setText:batteryText];
+    
+    else if(enableCustomTimeText && [self.text containsString:@":"] && ![self.text containsString:@"%"] && (!carrierText || ![self.text containsString:carrierText]) && (!batteryText || ![self.text containsString:batteryText]) && (!carrierStatusText || ![self.text containsString:carrierStatusText])) [self setText:timeText];
+    
+    else if(enableCustomCarrierStatusText && ([self.text containsString:@"LTE"] || [self.text containsString:@"5G"] || [self.text containsString:@"5Ge"] || [self.text containsString:@"4G"] || [self.text containsString:@"3G"] || [self.text containsString:@"SOS"] || [self.text isEqualToString:carrierStatusText])) [self setText:carrierStatusText];
     
     %orig;
 }
@@ -418,5 +425,6 @@ static BOOL squareApps;
     [preferences registerBool:&hideFolderIconBackground default:NO forKey:@"hideFolderIconBackground"];
     [preferences registerBool:&hideLSShortCuts default:NO forKey:@"hideLSShortCuts"];
     [preferences registerBool:&squareApps default:NO forKey:@"squareApps"];
+    [preferences registerBool:&enableCustomCarrierStatusText default:NO forKey:@"enableCustomCarrierStatusText"];
     %init(WaveAway)
 }
