@@ -28,6 +28,7 @@ static BOOL hideSwipeToUnlock;
 static BOOL hideFolderIconBackground;
 static BOOL hideLSShortCuts;
 static BOOL squareApps;
+static BOOL hideHomebar;
 
 //Interfaces
 
@@ -72,6 +73,9 @@ static BOOL squareApps;
 @end
 @interface SBIconView : UIView
 -(void)setLabelHidden;
+@end
+@interface MTLumaDodgePillSettings : NSObject
+-(void)setHeight;
 @end
 
 // End Interfaces
@@ -395,6 +399,17 @@ static BOOL squareApps;
 
 %end
 
+%hook MTLumaDodgePillSettings
+
+-(void)setHeight:(double)arg1 {
+    if(hideHomebar) {
+        return %orig(0);
+    }
+    %orig;
+}
+
+%end
+
 %end
 %ctor {
     
@@ -426,5 +441,6 @@ static BOOL squareApps;
     [preferences registerBool:&hideLSShortCuts default:NO forKey:@"hideLSShortCuts"];
     [preferences registerBool:&squareApps default:NO forKey:@"squareApps"];
     [preferences registerBool:&enableCustomCarrierStatusText default:NO forKey:@"enableCustomCarrierStatusText"];
+    [preferences registerBool:&hideHomebar default:NO forKey:@"hideHomebar"];
     %init(WaveAway)
 }

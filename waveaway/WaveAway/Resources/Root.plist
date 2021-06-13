@@ -278,15 +278,17 @@
 		<dict>
 			<key>PostNotification</key>
 			<string>com.sangster.sbcustomize/ReloadPrefs</string>
-            <key>cell</key>
-            <string>PSEditTextCell</string>
-            <key>label</key>
-            <string>Screen Time:</string>
-			<key>key</key>
-			<string>spoofScreenTime</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+            <false/>
 			<key>defaults</key>
 			<string>com.sangster.sbcustomize</string>
-        </dict>
+			<key>key</key>
+			<string>hideHomebar</string>
+			<key>label</key>
+			<string>Hide Homebar</string>
+		</dict>
 
 		<!-- Icons -->
 		<dict>
