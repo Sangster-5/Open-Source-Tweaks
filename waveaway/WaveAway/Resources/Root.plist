@@ -275,6 +275,14 @@
 			<key>label</key>
 			<string>Spoof Storage</string>
 		</dict>
+		
+		<!-- Home Bar -->
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Homebar</string>
+		</dict>
 		<dict>
 			<key>PostNotification</key>
 			<string>com.sangster.sbcustomize/ReloadPrefs</string>
@@ -288,6 +296,150 @@
 			<string>hideHomebar</string>
 			<key>label</key>
 			<string>Hide Homebar</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.sangster.sbcustomize/ReloadPrefs</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+            <false/>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomize</string>
+			<key>key</key>
+			<string>enableHomebarHeight</string>
+			<key>label</key>
+			<string>Enable Homebar Height</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSliderCell</string>
+			<key>key</key>
+			<string>homebarHeight</string>
+			<key>default</key>
+			<real>66</real>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomize</string>
+			<key>min</key>
+			<integer>0</integer>
+			<key>max</key>
+			<integer>200</integer>
+			<key>showValue</key>
+			<true/>
+			<key>height</key>
+			<real>44</real>
+			<key>isSegmented</key>
+			<string>true</string>
+			<key>PostNotification</key>
+			<string>com.sangster.sbcustomize/ReloadPrefs</string>
+		</dict>
+
+		<dict>
+			<key>PostNotification</key>
+			<string>com.sangster.sbcustomize/ReloadPrefs</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+            <false/>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomize</string>
+			<key>key</key>
+			<string>enableHomebarWidth</string>
+			<key>label</key>
+			<string>Enable Homebar Width</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSliderCell</string>
+			<key>key</key>
+			<string>homebarWidth</string>
+			<key>default</key>
+			<real>175</real>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomize</string>
+			<key>min</key>
+			<integer>0</integer>
+			<key>max</key>
+			<integer>400</integer>
+			<key>showValue</key>
+			<true/>
+			<key>height</key>
+			<real>44</real>
+			<key>isSegmented</key>
+			<string>true</string>
+			<key>PostNotification</key>
+			<string>com.sangster.sbcustomize/ReloadPrefs</string>
+		</dict>
+
+		<dict>
+			<key>PostNotification</key>
+			<string>com.sangster.sbcustomize/ReloadPrefs</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+            <false/>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomize</string>
+			<key>key</key>
+			<string>enableHomebarRadius</string>
+			<key>label</key>
+			<string>Enable Homebar Corner Radius</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSliderCell</string>
+			<key>key</key>
+			<string>homebarRadius</string>
+			<key>default</key>
+			<real>20</real>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomize</string>
+			<key>min</key>
+			<integer>0</integer>
+			<key>max</key>
+			<integer>100</integer>
+			<key>showValue</key>
+			<true/>
+			<key>height</key>
+			<real>44</real>
+			<key>isSegmented</key>
+			<string>true</string>
+			<key>PostNotification</key>
+			<string>com.sangster.sbcustomize/ReloadPrefs</string>
+		</dict>
+
+		<dict>
+			<key>PostNotification</key>
+			<string>com.sangster.sbcustomize/ReloadPrefs</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+            <false/>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomize</string>
+			<key>key</key>
+			<string>enableHomebarColour</string>
+			<key>label</key>
+			<string>Enable Homebar Colour</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSLinkCell</string>
+			<key>cellClass</key>
+			<string>SparkColourPickerCell</string>
+			<key>libsparkcolourpicker</key>
+			<dict>
+				<key>defaults</key>
+				<string>com.sangster.sbcustomize</string>
+				<key>fallback</key>
+				<string>#ffffff</string>
+				<key>alpha</key>
+				<true/>
+			</dict>
+			<key>label</key>
+			<string>Your Homebar Colour</string>
+			<key>key</key>
+			<string>homebarColour</string>
 		</dict>
 
 		<!-- Icons -->

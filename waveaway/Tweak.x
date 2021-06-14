@@ -29,6 +29,13 @@ static BOOL hideFolderIconBackground;
 static BOOL hideLSShortCuts;
 static BOOL squareApps;
 static BOOL hideHomebar;
+static double homebarHeight;
+static BOOL enableHomebarHeight;
+static double homebarRadius;
+static BOOL enableHomebarRadius;
+static double homebarWidth;
+static BOOL enableHomebarWidth;
+static BOOL enableHomebarColour;
 
 //Interfaces
 
@@ -76,6 +83,11 @@ static BOOL hideHomebar;
 @end
 @interface MTLumaDodgePillSettings : NSObject
 -(void)setHeight;
+-(void)setCornerRadius;
+-(void)setMinWidth;
+@end
+@interface MTStaticColorPillView : UIView
+-(void)setPillColor;
 @end
 
 // End Interfaces
@@ -399,11 +411,55 @@ static BOOL hideHomebar;
 
 %end
 
+// Homebar
 %hook MTLumaDodgePillSettings
 
 -(void)setHeight:(double)arg1 {
+    // Hide Homebar
     if(hideHomebar) {
         return %orig(0);
+    }
+    
+    // Custom Height
+    else if(enableHomebarHeight && !hideHomebar) {
+        return %orig(homebarHeight);
+    }
+    
+    %orig;
+}
+
+// Set Corner Radius
+-(void)setCornerRadius:(CGFloat)arg1 {
+    if(enableHomebarRadius && !hideHomebar) {
+        return %orig(homebarRadius);
+    }
+    %orig;
+}
+
+// Set Width
+-(void)setMinWidth:(CGFloat)arg1 {
+    if(enableHomebarWidth && !hideHomebar) {
+        return %orig(homebarWidth);
+    }
+    %orig;
+}
+
+%end
+
+// Set Homebar Colour
+%hook MTStaticColorPillView
+
+-(void)setPillColor:(id)arg1 {
+    if(enableHomebarColour && !hideHomebar) {
+        NSString* homebarColour = NULL;
+        NSDictionary* preferencesDictionary = [NSDictionary dictionaryWithContentsOfFile: @"/var/mobile/Library/Preferences/com.sangster.sbcustomize.plist"];
+        if(preferencesDictionary)
+        {
+            homebarColour = [preferencesDictionary objectForKey: @"homebarColour"];
+        }
+        
+        UIColor* selectedHomebarColour = [SparkColourPickerUtils colourWithString: homebarColour withFallback: @"#ffffff"];
+        return %orig(selectedHomebarColour);
     }
     %orig;
 }
@@ -442,5 +498,12 @@ static BOOL hideHomebar;
     [preferences registerBool:&squareApps default:NO forKey:@"squareApps"];
     [preferences registerBool:&enableCustomCarrierStatusText default:NO forKey:@"enableCustomCarrierStatusText"];
     [preferences registerBool:&hideHomebar default:NO forKey:@"hideHomebar"];
+    [preferences registerDouble:&homebarHeight default:100 forKey:@"homebarHeight"];
+    [preferences registerBool:&enableHomebarHeight default:NO forKey:@"enableHomebarHeight"];
+    [preferences registerDouble:&homebarRadius default:20 forKey:@"homebarRadius"];
+    [preferences registerBool:&enableHomebarRadius default:NO forKey:@"enableHomebarRadius"];
+    [preferences registerDouble:&homebarWidth default:100 forKey:@"homebarWidth"];
+    [preferences registerBool:&enableHomebarWidth default:NO forKey:@"enableHomebarWidth"];
+    [preferences registerBool:&enableHomebarColour default:NO forKey:@"enableHomebarColour"];
     %init(WaveAway)
 }
