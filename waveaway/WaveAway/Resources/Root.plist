@@ -271,6 +271,20 @@
 			<key>defaults</key>
 			<string>com.sangster.sbcustomize</string>
 			<key>key</key>
+			<string>enableBatteryLabel</string>
+			<key>label</key>
+			<string>Enable In Battery Label</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.sangster.sbcustomize/ReloadPrefs</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+            <false/>
+			<key>defaults</key>
+			<string>com.sangster.sbcustomize</string>
+			<key>key</key>
 			<string>spoofStorage</string>
 			<key>label</key>
 			<string>Spoof Storage</string>

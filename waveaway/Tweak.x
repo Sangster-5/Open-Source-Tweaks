@@ -36,6 +36,7 @@ static BOOL enableHomebarRadius;
 static double homebarWidth;
 static BOOL enableHomebarWidth;
 static BOOL enableHomebarColour;
+static BOOL enableBatteryLabel;
 
 //Interfaces
 
@@ -88,6 +89,9 @@ static BOOL enableHomebarColour;
 @end
 @interface MTStaticColorPillView : UIView
 -(void)setPillColor;
+@end
+@interface _UIBatteryView : UIView
+-(void)setShowsPercentage;
 @end
 
 // End Interfaces
@@ -466,6 +470,18 @@ static BOOL enableHomebarColour;
 
 %end
 
+%hook _UIBatteryView
+
+-(void)setShowsPercentage:(BOOL)arg1 {
+    if(enableBatteryLabel) {
+        return %orig(YES);
+    }
+    
+    %orig;
+}
+
+%end
+
 %end
 %ctor {
     
@@ -505,5 +521,6 @@ static BOOL enableHomebarColour;
     [preferences registerDouble:&homebarWidth default:100 forKey:@"homebarWidth"];
     [preferences registerBool:&enableHomebarWidth default:NO forKey:@"enableHomebarWidth"];
     [preferences registerBool:&enableHomebarColour default:NO forKey:@"enableHomebarColour"];
+    [preferences registerBool:&enableBatteryLabel default:NO forKey:@"enableBatteryLabel"];
     %init(WaveAway)
 }
